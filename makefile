@@ -8,7 +8,7 @@ VERSION = 0
 INCLUDE_PATH = $(PREFIX)/include/ladspamm-$(VERSION)
 PKGCONFIG_DIR ?= $(PREFIX)/lib/pkgconfig
 
-.PHONY: install uninstall test
+.PHONY: install uninstall	
 
 all: test
 
@@ -23,3 +23,4 @@ install:
 test: ladspamm-test.cc
 	PREFIX=./test make install
 	g++ -o ladspamm-$(VERSION)-test  ladspamm-test.cc `PKG_CONFIG_PATH=./test/lib/pkgconfig pkg-config ladspamm-$(VERSION) --cflags --libs`
+
