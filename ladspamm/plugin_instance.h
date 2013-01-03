@@ -69,6 +69,21 @@ namespace ladspamm
 		{
 			the_plugin->descriptor->connect_port(handle, port_index, location);
 		}
+		
+		LADSPA_Data port_lower_bound(unsigned int index)
+		{
+			
+		}
+		
+		LADSPA_Data port_upper_bound(unsigned int index)
+		{
+			
+		}
+		
+		LADSPA_Data port_default(unsigned int index)
+		{
+			
+		}
 	};
 
 	typedef boost::shared_ptr<plugin_instance> plugin_instance_ptr;
