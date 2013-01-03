@@ -5,13 +5,13 @@
 #include <vector>
 #include <boost/regex.hpp>
 
-#include <ladspamm/ladspamm.h>
-#include <ladspamm/plugin.h>
+#include <ladspamm-VERSION/ladspamm.h>
+#include <ladspamm-VERSION/plugin.h>
 
 namespace ladspamm 
 {
 	struct world
-	{
+	{	
 		const std::vector<ladspamm::library_ptr> libraries;
 		
 		world(std::string path = get_path_from_environment())

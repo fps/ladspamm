@@ -7,41 +7,40 @@
 #include <stdexcept>
 #include <boost/shared_ptr.hpp>
 
-#include <ladspa_plugin.h>
-#include <library.h>
+#include <ladspamm-VERSION/plugin.h>
 
-namespace ladspapp 
+namespace ladspamm
 {
 	/**
 	* A simple wrapper class around a LADSPA library file
 	* to make some reoccuring work easier..
 	*/
-	struct ladspa_library 
+	struct library 
 	: 
 		boost::noncopyable 
 	{
-		library_ptr the_library;
+		dl_ptr the_dl;
 
-		std::vector<ladspa_plugin_ptr> ladspa_plugins;
+		std::vector<plugin_ptr> plugins;
 		
-		ladspa_library(library_ptr the_library) 
+		library(dl_ptr the_dl) 
 		throw 
 		(
 			std::runtime_error
 		)
 		:
-			the_library(the_library)	
+			the_dl(the_dl)	
 		{
 			init();
 		}
 		
-		ladspa_library(std::string filename)
+		library(std::string filename)
 		throw 
 		(
 			std::runtime_error
 		)
 		{
-			the_library = library_ptr(new library(filename));
+			the_dl = dl_ptr(new dl(filename));
 			init();
 		}
 		
@@ -51,18 +50,18 @@ namespace ladspapp
 			std::runtime_error
 		)
 		{
-			LADSPA_Descriptor_Function ladspa_descriptor_fun = (LADSPA_Descriptor_Function)dlsym(the_library->dl, "ladspa_descriptor");
+			LADSPA_Descriptor_Function descriptor_fun = (LADSPA_Descriptor_Function)dlsym(the_dl->dl_handle, "descriptor");
 			
 			char *error = dlerror();
 			if (NULL != error) {
-				throw std::runtime_error("Failed to lookup ladspa_descriptor. dlerror: " + std::string(error));
+				throw std::runtime_error("Failed to lookup descriptor. dlerror: " + std::string(error));
 			}
 			
 			int index = 0;
 			while(true) 
 			{
 				const LADSPA_Descriptor *descriptor;
-				descriptor = ladspa_descriptor_fun(index);
+				descriptor = descriptor_fun(index);
 				if (0 == descriptor) 
 				{
 					break;
@@ -70,13 +69,13 @@ namespace ladspapp
 				
 				// std::cerr << "Plugin: " << descriptor->Label << std::endl;
 				
-				ladspa_plugins.push_back(ladspa_plugin_ptr(new ladspa_plugin(the_library, descriptor)));
+				plugins.push_back(plugin_ptr(new plugin(the_dl, descriptor)));
 				++index;
 			}
 		}
 	};
 	
-	typedef boost::shared_ptr<ladspa_library> ladspa_library_ptr;
+	typedef boost::shared_ptr<library> library_ptr;
 } // namespace
 
 #endif

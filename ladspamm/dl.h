@@ -13,7 +13,7 @@ namespace ladspamm
 	*/
 	struct dl : boost::noncopyable 
 	{
-		void *dl_handles;
+		void *dl_handle;
 		
 		dl(std::string filename, int flags = RTLD_NOW)
 		throw 
@@ -28,7 +28,7 @@ namespace ladspamm
 			
 			dl_handle = dlopen(filename.c_str(), flags);
 			
-			if (NULL == dl)
+			if (NULL == dl_handle)
 			{
 				throw std::runtime_error("Failed to dlopen " + filename + " Reason: " + dlerror());
 			}

@@ -6,7 +6,8 @@
 #include <boost/utility.hpp>
 #include <ladspa.h>
 #include <iostream>
-#include <library.h>
+
+#include <ladspamm-VERSION/dl.h>
 
 namespace ladspamm 
 {
@@ -14,16 +15,16 @@ namespace ladspamm
 	:
 		boost::noncopyable
 	{
-		library_ptr the_library;
+		dl_ptr the_dl;
 		const LADSPA_Descriptor *descriptor;
 		
-		plugin(library_ptr the_library, const LADSPA_Descriptor *descriptor)
+		plugin(dl_ptr the_dl, const LADSPA_Descriptor *descriptor)
 		throw 
 		(
 			std::runtime_error
 		)
 		:
-			the_library(the_library),
+			the_dl(the_dl),
 			descriptor(descriptor)
 		{
 			std::cerr << uid() << "\t" << label() << "\t" << name() << " " << maker() << std::endl;

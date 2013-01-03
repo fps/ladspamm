@@ -9,13 +9,13 @@
 #include <boost/shared_ptr.hpp>
 #include <boost/utility.hpp>
 
-#include <library.h>
-#include <ladspa/library.h>
+#include <ladspamm-VERSION/dl.h>
+#include <ladspamm-VERSION/library.h>
 
 namespace ladspamm 
 {
 
-	inline std::string get_ladspa_path_from_environment(std::string environment_variable_name = "LADSPA_PATH")
+	inline std::string get_path_from_environment(std::string environment_variable_name = "LADSPA_PATH")
 	throw 
 	(
 		std::runtime_error
@@ -50,38 +50,38 @@ namespace ladspamm
 	}
 
 	/**
-	 * If load_libraries is false, then the ladspa_library objects
+	 * If load_libraries is false, then the library objects
 	 * returned in the collection need to be loaded manually.
 	 * 
 	 * This is useful to avoid crashing libraries. On the other
 	 * hand there might be race conditions with library files going 
-	 * away after scanning. Then the ladspa_library load() function
+	 * away after scanning. Then the library load() function
 	 * will fail with an exception.
 	 * 
 	 * Note that with load_libraries == false there is no check
-	 * for the found files in the ladspa_path are actually ladspa 
+	 * for the found files in the path are actually ladspa 
 	 * library files.. 
 	 */
-	inline std::vector<ladspa_library_ptr> ladspa_world_scan
+	inline std::vector<library_ptr> world_scan
 	(
-		std::string ladspa_path
+		std::string path
 	)
 	throw 
 	(
 		std::runtime_error
 	)
 	{
-		std::vector<std::string> ladspa_path_components = split_path(ladspa_path, ':');
+		std::vector<std::string> path_components = split_path(path, ':');
 	
-		std::vector<ladspa_library_ptr> libraries;
+		std::vector<library_ptr> libraries;
 		
 		try
 		{
-			for (unsigned int index = 0; index < ladspa_path_components.size(); ++index) 
+			for (unsigned int index = 0; index < path_components.size(); ++index) 
 			{
-				std::cerr << "LADSPA_PATH component: " << ladspa_path_components[index] << std::endl;
+				std::cerr << "LADSPA_PATH component: " << path_components[index] << std::endl;
 				
-				boost::filesystem::path path(ladspa_path_components[index]);
+				boost::filesystem::path path(path_components[index]);
 				
 				if (false == boost::filesystem::is_directory(path))
 				{
@@ -98,8 +98,8 @@ namespace ladspamm
 					std::cerr << "LADSPA library: " << (*it).path().c_str() << std::endl;
 					try
 					{
-						library_ptr the_library(new library((*it).path().c_str()));
-						libraries.push_back(ladspa_library_ptr(new ladspa_library(the_library)));
+						dl_ptr the_dl(new dl((*it).path().c_str()));
+						libraries.push_back(library_ptr(new library(the_dl)));
 					}
 					catch (std::runtime_error e) 
 					{
