@@ -46,4 +46,4 @@ Florian Paul Schmidt (mista.tapas at gmx dot net)
 
 # LICENSE
 
-LGPL 3.0 or higher (see http://www.gnu.org/copyleft/lesser.html)
+LGPL 3.0 or higher (see http://www.gnu.org/copyleft/lesser.html) and the LICENSE file in the source..
