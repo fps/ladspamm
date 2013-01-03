@@ -50,7 +50,7 @@ namespace ladspamm
 			std::runtime_error
 		)
 		{
-			LADSPA_Descriptor_Function descriptor_fun = (LADSPA_Descriptor_Function)dlsym(the_dl->dl_handle, "descriptor");
+			LADSPA_Descriptor_Function descriptor_fun = (LADSPA_Descriptor_Function)dlsym(the_dl->dl_handle, "ladspa_descriptor");
 			
 			char *error = dlerror();
 			if (NULL != error) {
