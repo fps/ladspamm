@@ -1,5 +1,5 @@
-#ifndef LADSPA_WORLD_HH
-#define LADSPA_WORLD_HH
+#ifndef LADSPAMM_LADSPA_WORLD_HH
+#define LADSPAMM_LADSPA_WORLD_HH
 
 #include <string>
 #include <stdexcept>

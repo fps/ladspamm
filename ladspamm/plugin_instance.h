@@ -38,6 +38,11 @@ namespace ladspamm
 			}
 		}
 		
+		~plugin_instance()
+		{
+			the_plugin->descriptor->cleanup(handle);
+		}
+		
 		void activate() 
 		{
 			if (NULL != the_plugin->descriptor->activate)
@@ -54,9 +59,9 @@ namespace ladspamm
 			}
 		}
 		
-		void connect_port(unsigned long port, LADSPA_Data *location)
+		void connect_port(unsigned long port_index, LADSPA_Data *location)
 		{
-			the_plugin->descriptor->connect_port(handle, port, location);
+			the_plugin->descriptor->connect_port(handle, port_index, location);
 		}
 	};
 
