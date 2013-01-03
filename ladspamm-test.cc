@@ -4,6 +4,7 @@
 int main() 
 {
 	ladspamm::world world;
+	
 	ladspamm::plugin_instance_ptr instance
 	(
 		new ladspamm::plugin_instance(world.libraries[0]->plugins[0], 48000)

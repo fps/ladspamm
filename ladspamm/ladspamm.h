@@ -31,10 +31,6 @@ namespace ladspamm
 		return std::string(path);
 	}
 
-	/**
-	 * Splits a path string at the separators and returns a vector<string> with
-	 * the components..
-	 */
 	inline std::vector<std::string> split_path(std::string path, char separator) 
 	{
 		std::vector<std::string> components;
@@ -49,19 +45,6 @@ namespace ladspamm
 		return components;
 	}
 
-	/**
-	 * If load_libraries is false, then the library objects
-	 * returned in the collection need to be loaded manually.
-	 * 
-	 * This is useful to avoid crashing libraries. On the other
-	 * hand there might be race conditions with library files going 
-	 * away after scanning. Then the library load() function
-	 * will fail with an exception.
-	 * 
-	 * Note that with load_libraries == false there is no check
-	 * for the found files in the path are actually ladspa 
-	 * library files.. 
-	 */
 	inline std::vector<library_ptr> world_scan
 	(
 		std::string path

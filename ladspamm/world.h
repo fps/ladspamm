@@ -15,6 +15,10 @@ namespace ladspamm
 		const std::vector<ladspamm::library_ptr> libraries;
 		
 		world(std::string path = get_path_from_environment())
+		throw 
+		(
+			std::runtime_error
+		)
 		:
 			libraries(ladspamm::world_scan(path))
 		{

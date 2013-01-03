@@ -40,12 +40,18 @@ namespace ladspamm
 		
 		void activate() 
 		{
-			the_plugin->descriptor->activate(handle);
+			if (NULL != the_plugin->descriptor->activate)
+			{
+				the_plugin->descriptor->activate(handle);
+			}
 		}
 		
 		void deactivate()
 		{
-			the_plugin->descriptor->deactivate(handle);
+			if (NULL != the_plugin->descriptor->deactivate)
+			{
+				the_plugin->descriptor->deactivate(handle);
+			}
 		}
 		
 		void connect_port(unsigned long port, LADSPA_Data *location)
