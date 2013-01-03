@@ -49,6 +49,11 @@ namespace ladspamm
 		{
 			return descriptor->UniqueID;
 		}
+		
+		unsigned long port_count()
+		{
+			return descriptor->PortCount;
+		}
 	};
 	
 	typedef boost::shared_ptr<plugin> plugin_ptr;

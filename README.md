@@ -37,11 +37,3 @@ and run it with
 # EXAMPLE
 
 Checkout the ladspamm-test.cc file.
-
-    #include <ladspamm-0/world.h>
-
-    int main() 
-    {
-        ladspamm::world world;
-    }
-

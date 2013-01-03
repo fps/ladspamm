@@ -4,22 +4,22 @@
 #include <boost/shared_ptr.hpp>
 #include <boost/utility.hpp>
 #include <ladspa.h>
-#include "ladspa_library.h"
 
-#include <ladspa_plugin.h>
+#include <ladspamm-VERSION/plugin.h>
 
-namespace ladspapp 
+namespace ladspamm
 {
-	struct ladspa_plugin_instance 
+	struct plugin_instance 
 	: 
 		boost::noncopyable 
 	{
-		ladspa_plugin_ptr the_ladspa_plugin;
+		plugin_ptr the_plugin;
 		LADSPA_Handle handle;
+		unsigned long samplerate;
 		
-		ladspa_plugin_instance
+		plugin_instance
 		(
-			ladspa_plugin_ptr the_ladspa_plugin,
+			plugin_ptr the_plugin,
 			unsigned long samplerate
 		)
 		throw 
@@ -27,12 +27,33 @@ namespace ladspapp
 			std::runtime_error
 		)
 		:
-			the_ladspa_plugin(the_ladspa_plugin)
+			the_plugin(the_plugin),
+			samplerate(samplerate)
 		{
-				handle = the_ladspa_plugin->descriptor->instantiate(the_ladspa_plugin->descriptor, samplerate);
+			handle = the_plugin->descriptor->instantiate(the_plugin->descriptor, samplerate);
+			
+			if (NULL == handle)
+			{
+				throw std::runtime_error("Failed to instantiate plugin");
+			}
+		}
+		
+		void activate() 
+		{
+			the_plugin->descriptor->activate(handle);
+		}
+		
+		void deactivate()
+		{
+			the_plugin->descriptor->deactivate(handle);
+		}
+		
+		void connect_port(unsigned long port, LADSPA_Data *location)
+		{
+			the_plugin->descriptor->connect_port(handle, port, location);
 		}
 	};
 
-	typedef boost::shared_ptr<ladspa_plugin_instance> ladspa_plugin_instance_ptr;
+	typedef boost::shared_ptr<plugin_instance> plugin_instance_ptr;
 } // namespace
 #endif
