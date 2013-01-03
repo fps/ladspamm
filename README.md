@@ -32,8 +32,18 @@ and run it with
 
     ./ladspamm-0-test
 
-
-
 # EXAMPLE
 
-Checkout the ladspamm-test.cc file.
+Checkout the ladspamm-test.cc file for some usage info.
+
+# DOCUMENTATION
+
+Use the source, Luke!
+
+# AUTHOR
+
+Florian Paul Schmidt (mista.tapas at gmx dot net)
+
+# LICENSE
+
+LGPL 3.0 or higher (see http://www.gnu.org/copyleft/lesser.html)
