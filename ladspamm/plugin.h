@@ -27,7 +27,7 @@ namespace ladspamm
 			the_dl(the_dl),
 			descriptor(descriptor)
 		{
-			std::cerr << uid() << "\t" << label() << "\t" << name() << " " << maker() << std::endl;
+			// std::cerr << uid() << "\t" << label() << "\t" << name() << " " << maker() << std::endl;
 		}
 		
 		std::string label() 
@@ -53,6 +53,11 @@ namespace ladspamm
 		unsigned long port_count()
 		{
 			return descriptor->PortCount;
+		}
+		
+		std::string port_name(unsigned int index)
+		{
+			return descriptor->PortNames[index];
 		}
 	};
 	

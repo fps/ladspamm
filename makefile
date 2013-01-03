@@ -8,7 +8,7 @@ VERSION = 0
 INCLUDE_PATH = $(PREFIX)/include/ladspamm-$(VERSION)
 PKGCONFIG_DIR ?= $(PREFIX)/lib/pkgconfig
 
-.PHONY: install
+.PHONY: install all test
 
 all: test
 

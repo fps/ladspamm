@@ -5,7 +5,6 @@
 #include <vector>
 
 #include <ladspamm-VERSION/ladspamm.h>
-#include <ladspamm-VERSION/plugin.h>
 
 namespace ladspamm 
 {

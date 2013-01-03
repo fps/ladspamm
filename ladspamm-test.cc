@@ -14,6 +14,11 @@ int main()
 		
 		std::cout << "Name: " << instance.the_plugin->name() << std::endl;
 		
+		for (unsigned int index = 0; index < instance.the_plugin->port_count(); ++index)
+		{
+			std::cout << "Port: " << instance.the_plugin->port_name(index) << std::endl;
+		}
+		
 		instance.activate();
 		
 		instance.deactivate();

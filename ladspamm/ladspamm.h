@@ -62,7 +62,7 @@ namespace ladspamm
 		{
 			for (unsigned int index = 0; index < path_components.size(); ++index) 
 			{
-				std::cerr << "LADSPA_PATH component: " << path_components[index] << std::endl;
+				// std::cerr << "LADSPA_PATH component: " << path_components[index] << std::endl;
 				
 				boost::filesystem::path path(path_components[index]);
 				
@@ -78,7 +78,7 @@ namespace ladspamm
 					++it
 				)
 				{
-					std::cerr << "LADSPA library: " << (*it).path().c_str() << std::endl;
+					// std::cerr << "LADSPA library: " << (*it).path().c_str() << std::endl;
 					try
 					{
 						dl_ptr the_dl(new dl((*it).path().c_str()));

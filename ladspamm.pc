@@ -7,4 +7,4 @@ Name: ladspamm-0
 Description: The ladspamm library
 Version: 0.0.1
 Cflags: -I${includedir}/
-Libs: -lboost_filesystem -lboost_regex -lboost_system -ldl
+Libs: -lboost_filesystem -lboost_system -ldl
