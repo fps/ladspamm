@@ -10,6 +10,10 @@ A C++ header only library to find, inspect and instantiate LADSPA plugins.
 
 * boost-filesystem
 
+* LADSPA headers
+
+* libdl
+
 * sed
 
 * make
