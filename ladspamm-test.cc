@@ -12,11 +12,11 @@ int main()
 		
 		ladspamm::plugin_instance instance(world.libraries[0]->plugins[0], 48000);
 		
-		std::cout << "Name: " << instance.the_plugin->name() << std::endl;
+		std::cout << "Name: " << instance.plugin()->name() << std::endl;
 		
-		for (unsigned int index = 0; index < instance.the_plugin->port_count(); ++index)
+		for (unsigned int index = 0; index < instance.plugin()->port_count(); ++index)
 		{
-			std::cout << "Port: " << instance.the_plugin->port_name(index) << std::endl;
+			std::cout << "Port: " << instance.plugin()->port_name(index) << std::endl;
 		}
 		
 		instance.activate();

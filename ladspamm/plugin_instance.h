@@ -43,6 +43,12 @@ namespace ladspamm
 			the_plugin->descriptor->cleanup(handle);
 		}
 		
+		plugin_ptr plugin()
+		{
+			return the_plugin;
+		}
+		
+
 		void activate() 
 		{
 			if (NULL != the_plugin->descriptor->activate)
