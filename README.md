@@ -26,4 +26,12 @@ A C++ header only library to find, inspect and instantiate LADSPA plugins.
 
 # EXAMPLE
 
-Checkout the ladspamm-test.cc file. 
+Checkout the ladspamm-test.cc file.
+
+    #include <ladspamm-0/world.h>
+
+    int main() 
+    {
+        ladspamm::world world;
+    }
+
