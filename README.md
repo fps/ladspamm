@@ -24,7 +24,13 @@ A C++ header only (out of pure laziness) library to find, inspect and instantiat
 
 # TESTING
 
+Build the test case with
+
     make test
+    
+and run it with
+
+    ./ladspamm-0-test
 
 
 
