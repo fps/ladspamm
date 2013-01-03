@@ -1,6 +1,6 @@
 # LADSPAMM
 
-A C++ header only library to find, inspect and instantiate LADSPA plugins.
+A C++ header only (out of pure laziness) library to find, inspect and instantiate LADSPA plugins.
 
 # REQUIREMENTS
 
