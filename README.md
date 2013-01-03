@@ -4,11 +4,15 @@ A C++ header only library to find, inspect and instantiate LADSPA plugins.
 
 # REQUIREMENTS
 
-boost-system
-boost-regex
-boost-filesystem
-sed
-make
+* boost-system
+
+* boost-regex
+
+* boost-filesystem
+
+* sed
+
+* make
 
 # INSTALLATION
 
