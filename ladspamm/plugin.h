@@ -145,6 +145,30 @@ namespace ladspamm
 			return LADSPA_IS_HINT_DEFAULT_440(descriptor->PortRangeHints[index].HintDescriptor);
 		}
 
+		bool port_default_is_lower_bound(unsigned int index)
+		{
+			return LADSPA_IS_HINT_DEFAULT_MINIMUM(descriptor->PortRangeHints[index].HintDescriptor);
+		}
+		
+		bool port_default_is_upper_bound(unsigned int index)
+		{
+			return LADSPA_IS_HINT_DEFAULT_MAXIMUM(descriptor->PortRangeHints[index].HintDescriptor);
+		}
+
+		bool port_default_is_low(unsigned int index)
+		{
+			return LADSPA_IS_HINT_DEFAULT_LOW(descriptor->PortRangeHints[index].HintDescriptor);
+		}
+		
+		bool port_default_is_high(unsigned int index)
+		{
+			return LADSPA_IS_HINT_DEFAULT_HIGH(descriptor->PortRangeHints[index].HintDescriptor);
+		}
+
+		bool port_default_is_middle(unsigned int index)
+		{
+			return LADSPA_IS_HINT_DEFAULT_MIDDLE(descriptor->PortRangeHints[index].HintDescriptor);
+		}
 	};
 	
 	typedef boost::shared_ptr<plugin> plugin_ptr;

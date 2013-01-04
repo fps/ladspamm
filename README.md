@@ -6,8 +6,6 @@ A C++ header only (out of pure laziness) library to find, inspect and instantiat
 
 * boost-system
 
-* boost-regex
-
 * boost-filesystem
 
 * LADSPA headers

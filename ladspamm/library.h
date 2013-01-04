@@ -11,10 +11,6 @@
 
 namespace ladspamm
 {
-	/**
-	* A simple wrapper class around a LADSPA library file
-	* to make some reoccuring work easier..
-	*/
 	struct library 
 	: 
 		boost::noncopyable 
