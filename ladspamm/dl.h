@@ -14,12 +14,15 @@ namespace ladspamm
 	struct dl : boost::noncopyable 
 	{
 		void *dl_handle;
+		std::string filename;
 		
 		dl(std::string filename, int flags = RTLD_NOW)
 		throw 
 		(
 			std::runtime_error
 		)
+		:
+			filename(filename)
 		{
 			/**
 			* Reset possible leftover errors.

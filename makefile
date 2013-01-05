@@ -22,5 +22,5 @@ install:
 
 test: ladspamm-test.cc
 	PREFIX=./test make install
-	g++ -o ladspamm-$(VERSION)-test  ladspamm-test.cc `PKG_CONFIG_PATH=./test/lib/pkgconfig pkg-config ladspamm-$(VERSION) --cflags --libs`
+	g++ -g -O0 -o ladspamm-$(VERSION)-test  ladspamm-test.cc `PKG_CONFIG_PATH=./test/lib/pkgconfig pkg-config ladspamm-$(VERSION) --cflags --libs`
 
