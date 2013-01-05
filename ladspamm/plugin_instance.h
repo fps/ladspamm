@@ -5,6 +5,7 @@
 #include <boost/utility.hpp>
 #include <ladspa.h>
 #include <cmath>
+#include <algorithm>
 #include <stdexcept>
 
 #include <ladspamm-VERSION/plugin.h>
@@ -110,7 +111,43 @@ namespace ladspamm
 			return the_plugin->port_upper_bound(index);
 		}
 		
+		/**
+		 * This function tries to do an educated
+		 * guess when the plugin does silly things like
+		 * specifying default values outside of bounds
+		 * or no default at all
+		 */
+		LADSPA_Data port_default_guessed(unsigned int index)
+		{
+			LADSPA_Data guess = 0;
+			
+			if (the_plugin->port_has_default(index))
+			{
+				guess = port_default(index);
+			}
+			
+			if (the_plugin->port_is_bounded_below(index))
+			{
+				guess = std::max(port_lower_bound(index), guess);
+			}
+			
+			if (the_plugin->port_is_bounded_above(index))
+			{
+				guess = std::min(port_upper_bound(index), guess);
+			}
+			
+			return guess;
+		}
+		
 		LADSPA_Data port_default(unsigned int index)
+		{
+			if (the_plugin->port_is_integer(index))
+			{
+				return round(port_default0(index));
+			}
+		}
+		
+		LADSPA_Data port_default0(unsigned int index)
 		throw
 		(
 			std::logic_error

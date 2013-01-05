@@ -39,12 +39,8 @@ int main()
 						std::cout << "      Default: " << instance.port_default(port_index) << std::endl;
 					}
 				}
-				
-				instance.activate();
-				instance.deactivate();
 			}
 		}
-		
 	}
 	
 	catch(const std::runtime_error &e)
