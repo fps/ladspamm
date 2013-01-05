@@ -150,6 +150,44 @@ namespace ladspamm
 			{
 				return port_upper_bound(index);
 			}
+			
+			if (the_plugin->port_default_is_middle(index))
+			{
+				if (the_plugin->port_is_logarithmic(index))
+				{
+					return exp(log(the_plugin->port_lower_bound(index)) * 0.5 + log(the_plugin->port_upper_bound(index)) * 0.5);
+				}
+				else
+				{
+					return the_plugin->port_lower_bound(index) * 0.5 + the_plugin->port_upper_bound(index) * 0.5;
+				}
+			}
+			
+			if (the_plugin->port_default_is_low(index))
+			{
+				if (the_plugin->port_is_logarithmic(index))
+				{
+					return exp(log(the_plugin->port_lower_bound(index)) * 0.75 + log(the_plugin->port_upper_bound(index)) * 0.25);
+				}
+				else
+				{
+					return the_plugin->port_lower_bound(index) * 0.75 + the_plugin->port_upper_bound(index) * 0.25;
+				}
+			}
+
+			if (the_plugin->port_default_is_high(index))
+			{
+				if (the_plugin->port_is_logarithmic(index))
+				{
+					return exp(log(the_plugin->port_lower_bound(index)) * 0.25 + log(the_plugin->port_upper_bound(index)) * 0.75);
+				}
+				else
+				{
+					return the_plugin->port_lower_bound(index) * 0.25 + the_plugin->port_upper_bound(index) * 0.75;
+				}
+			}
+
+			throw std::logic_error("Unhandled default case");
 		}
 		
 		void run(unsigned long nframes)
