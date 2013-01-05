@@ -4,6 +4,7 @@
 #include <boost/shared_ptr.hpp>
 #include <boost/utility.hpp>
 #include <ladspa.h>
+#include <stdexcept>
 
 #include <ladspamm-VERSION/plugin.h>
 
@@ -71,18 +72,68 @@ namespace ladspamm
 		}
 		
 		LADSPA_Data port_lower_bound(unsigned int index)
+		throw
+		(
+			std::logic_error
+		)
 		{
+			if (false == the_plugin->port_is_bounded_below(index))
+			{
+				throw std::logic_error("Port has no lower bound");
+			}
 			
+			if (true == the_plugin->port_is_scaled_by_samplerate(index))
+			{
+				return samplerate * the_plugin->port_lower_bound(index);
+			}
+			
+			return the_plugin->port_lower_bound(index);
 		}
 		
 		LADSPA_Data port_upper_bound(unsigned int index)
+		throw
+		(
+			std::logic_error
+		)
 		{
+			if (false == the_plugin->port_is_bounded_above(index))
+			{
+				throw std::logic_error("Port has no lower bound");
+			}
+
+			if (true == the_plugin->port_is_scaled_by_samplerate(index))
+			{
+				return samplerate * the_plugin->port_upper_bound(index);
+			}
 			
+			return the_plugin->port_upper_bound(index);
 		}
 		
 		LADSPA_Data port_default(unsigned int index)
+		throw
+		(
+			std::logic_error
+		)
 		{
+			if (the_plugin->port_default_is_0(index))
+			{
+				return 0;
+			}
 			
+			if (the_plugin->port_default_is_1(index))
+			{
+				return 1;
+			}
+			
+			if (the_plugin->port_default_is_100(index))
+			{
+				return 100;
+			}
+			
+			if (the_plugin->port_default_is_440(index))
+			{
+				return 440;
+			}
 		}
 		
 		void run(unsigned long nframes)

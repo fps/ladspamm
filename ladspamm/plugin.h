@@ -169,6 +169,16 @@ namespace ladspamm
 		{
 			return LADSPA_IS_HINT_DEFAULT_MIDDLE(descriptor->PortRangeHints[index].HintDescriptor);
 		}
+		
+		bool has_run_adding()
+		{
+			return NULL != descriptor->run_adding;
+		}
+		
+		bool has_set_run_adding_gain()
+		{
+			return NULL != descriptor->set_run_adding_gain;
+		}
 	};
 	
 	typedef boost::shared_ptr<plugin> plugin_ptr;
