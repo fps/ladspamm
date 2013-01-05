@@ -187,7 +187,7 @@ namespace ladspamm
 				}
 			}
 
-			throw std::logic_error("Unhandled default case");
+			throw std::logic_error("Unhandled default case - this is a bug in ladspamm. Please report to the author..");
 		}
 		
 		void run(unsigned long nframes)
