@@ -84,6 +84,11 @@ namespace ladspamm
 		{
 			
 		}
+		
+		void run(unsigned long nframes)
+		{
+			the_plugin->descriptor->run(handle, nframes);
+		}
 	};
 
 	typedef boost::shared_ptr<plugin_instance> plugin_instance_ptr;

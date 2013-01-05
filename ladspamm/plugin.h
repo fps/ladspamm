@@ -27,7 +27,7 @@ namespace ladspamm
 			the_dl(the_dl),
 			descriptor(descriptor)
 		{
-			// std::cerr << uid() << "\t" << label() << "\t" << name() << " " << maker() << std::endl;
+
 		}
 		
 		std::string label() 
