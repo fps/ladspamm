@@ -17,6 +17,20 @@ int main()
 		for (unsigned int index = 0; index < instance.plugin()->port_count(); ++index)
 		{
 			std::cout << "Port: " << instance.plugin()->port_name(index) << std::endl;
+			if (instance.the_plugin->port_is_bounded_below(index))
+			{
+				std::cout << "  Lower bound: " << instance.port_lower_bound(index) << std::endl;
+			}
+
+			if (instance.the_plugin->port_is_bounded_above(index))
+			{
+				std::cout << "  Upper bound: " << instance.port_upper_bound(index) << std::endl;
+			}
+			
+			if (instance.the_plugin->port_has_default(index))
+			{
+				std::cout << "  Default: " << instance.port_default(index) << std::endl;
+			}
 		}
 		
 		instance.activate();

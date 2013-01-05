@@ -80,11 +80,6 @@ namespace ladspamm
 			return LADSPA_IS_PORT_CONTROL(descriptor->PortDescriptors[index]);
 		}
 
-		bool port_is_bounded_below(unsigned int index)
-		{
-			return LADSPA_IS_HINT_BOUNDED_BELOW(descriptor->PortRangeHints[index].HintDescriptor);
-		}
-		
 		LADSPA_Data port_lower_bound(unsigned int index)
 		{
 			return descriptor->PortRangeHints[index].LowerBound;
@@ -96,6 +91,11 @@ namespace ladspamm
 		}
 
 		bool port_is_bounded_above(unsigned int index)
+		{
+			return LADSPA_IS_HINT_BOUNDED_BELOW(descriptor->PortRangeHints[index].HintDescriptor);
+		}
+		
+		bool port_is_bounded_below(unsigned int index)
 		{
 			return LADSPA_IS_HINT_BOUNDED_BELOW(descriptor->PortRangeHints[index].HintDescriptor);
 		}
