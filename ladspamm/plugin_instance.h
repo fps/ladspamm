@@ -214,11 +214,11 @@ namespace ladspamm
 			{
 				if (the_plugin->port_is_logarithmic(index))
 				{
-					return exp(log(the_plugin->port_lower_bound(index)) * 0.5 + log(the_plugin->port_upper_bound(index)) * 0.5);
+					return exp(log(port_lower_bound(index)) * 0.5 + log(port_upper_bound(index)) * 0.5);
 				}
 				else
 				{
-					return the_plugin->port_lower_bound(index) * 0.5 + the_plugin->port_upper_bound(index) * 0.5;
+					return port_lower_bound(index) * 0.5 + port_upper_bound(index) * 0.5;
 				}
 			}
 			
@@ -226,11 +226,11 @@ namespace ladspamm
 			{
 				if (the_plugin->port_is_logarithmic(index))
 				{
-					return exp(log(the_plugin->port_lower_bound(index)) * 0.75 + log(the_plugin->port_upper_bound(index)) * 0.25);
+					return exp(log(port_lower_bound(index)) * 0.75 + log(port_upper_bound(index)) * 0.25);
 				}
 				else
 				{
-					return the_plugin->port_lower_bound(index) * 0.75 + the_plugin->port_upper_bound(index) * 0.25;
+					return port_lower_bound(index) * 0.75 + port_upper_bound(index) * 0.25;
 				}
 			}
 
@@ -238,11 +238,11 @@ namespace ladspamm
 			{
 				if (the_plugin->port_is_logarithmic(index))
 				{
-					return exp(log(the_plugin->port_lower_bound(index)) * 0.25 + log(the_plugin->port_upper_bound(index)) * 0.75);
+					return exp(log(port_lower_bound(index)) * 0.25 + log(port_upper_bound(index)) * 0.75);
 				}
 				else
 				{
-					return the_plugin->port_lower_bound(index) * 0.25 + the_plugin->port_upper_bound(index) * 0.75;
+					return port_lower_bound(index) * 0.25 + port_upper_bound(index) * 0.75;
 				}
 			}
 
