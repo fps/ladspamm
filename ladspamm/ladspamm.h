@@ -16,10 +16,6 @@ namespace ladspamm
 {
 
 	inline std::string get_path_from_environment(std::string environment_variable_name = "LADSPA_PATH")
-	throw 
-	(
-		std::runtime_error
-	)
 	{
 		char *path = getenv(environment_variable_name.c_str());
 		
