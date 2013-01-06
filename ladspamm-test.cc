@@ -93,7 +93,7 @@ int main()
 				}
 				catch(std::exception &e)
 				{
-					std::cout << "Something went wrong: " << e.what() << std::endl;
+					std::cerr << "Something went wrong: " << e.what() << std::endl;
 				}
 			}
 		}
@@ -101,7 +101,7 @@ int main()
 	
 	catch(const std::runtime_error &e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 		return (EXIT_FAILURE);
 	}
 	
