@@ -36,9 +36,12 @@ int main()
 					
 					if (instance.the_plugin->port_has_default(port_index))
 					{
-						std::cout << "      Default: " << instance.port_default(port_index) << std::endl;
+						std::cout << "      Default: " << instance.port_default_guessed(port_index) << std::endl;
 					}
 				}
+				
+				instance.activate();
+				instance.deactivate();
 			}
 		}
 	}

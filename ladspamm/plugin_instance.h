@@ -43,7 +43,10 @@ namespace ladspamm
 		
 		~plugin_instance()
 		{
-			the_plugin->descriptor->cleanup(handle);
+			if (NULL != the_plugin->descriptor->cleanup)
+			{
+				the_plugin->descriptor->cleanup(handle);
+			}
 		}
 		
 		plugin_ptr plugin()
