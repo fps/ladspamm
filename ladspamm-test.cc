@@ -11,8 +11,6 @@ int main()
 	{
 		ladspamm::world world;
 		
-		std::vector<ladspamm::plugin_instance_ptr> instances;
-		
 		for (unsigned int lib_index = 0; lib_index < world.libraries.size(); ++lib_index)
 		{
 			std::cout << "Library: " << world.libraries[lib_index]->the_dl->filename << std::endl;
@@ -21,7 +19,7 @@ int main()
 			{
 				ladspamm::plugin_instance_ptr instance(new ladspamm::plugin_instance(world.libraries[lib_index]->plugins[plugin_index], 48000));
 				
-				instances.push_back(instance);
+				float f;
 				
 				std::cout << "  Name: " << instance->plugin()->name() << std::endl;
 

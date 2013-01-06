@@ -20,6 +20,13 @@ namespace ladspamm
 		LADSPA_Handle handle;
 		unsigned long samplerate;
 		
+		/**
+		 * Some plugins make wrong assumptions about ports being connected before 
+		 * activate() being called, thus we'll connect them to a small array 
+		 * to make them not crash
+		 */
+		float buf[8];
+		
 		plugin_instance
 		(
 			plugin_ptr the_plugin,
@@ -38,6 +45,14 @@ namespace ladspamm
 			if (NULL == handle)
 			{
 				throw std::runtime_error("Failed to instantiate plugin");
+			}
+			
+			/**
+			 * Workaround for crashing plugins. see buf[] above
+			 */
+			for (unsigned int port_index = 0; port_index < the_plugin->port_count(); ++port_index)
+			{
+				connect_port(port_index, buf);
 			}
 		}
 		
