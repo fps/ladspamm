@@ -6,6 +6,7 @@
 #include <boost/utility.hpp>
 #include <ladspa.h>
 #include <iostream>
+#include <cmath>
 
 #include <ladspamm-VERSION/dl.h>
 
@@ -105,6 +106,20 @@ namespace ladspamm
 			return LADSPA_IS_HINT_SAMPLE_RATE(descriptor->PortRangeHints[index].HintDescriptor);
 		}
 		
+		bool port_default_is_scaled_by_samplerate(unsigned int index)
+		{
+			return 
+				port_is_scaled_by_samplerate(index)
+				&&
+				(
+					   port_default_is_low(index)
+					|| port_default_is_lower_bound(index)
+					|| port_default_is_middle(index)
+					|| port_default_is_high(index)
+					|| port_default_is_upper_bound(index)
+				);
+		}
+		
 		bool port_is_logarithmic(unsigned int index)
 		{
 			return LADSPA_IS_HINT_LOGARITHMIC(descriptor->PortRangeHints[index].HintDescriptor);
@@ -178,6 +193,89 @@ namespace ladspamm
 		bool has_set_run_adding_gain()
 		{
 			return NULL != descriptor->set_run_adding_gain;
+		}
+		
+		/**
+		 * Not rounded even if port_is_integer. See plugin_instance::port_default()
+		 */
+		LADSPA_Data port_default(unsigned int index)
+		throw
+		(
+			std::logic_error
+		)
+		{
+			if (false == port_has_default(index))
+			{
+				throw std::logic_error("Port has no default");
+			}
+			
+			if (port_default_is_0(index))
+			{
+				return 0;
+			}
+			
+			if (port_default_is_1(index))
+			{
+				return 1;
+			}
+			
+			if (port_default_is_100(index))
+			{
+				return 100;
+			}
+			
+			if (port_default_is_440(index))
+			{
+				return 440;
+			}
+			
+			if (port_default_is_lower_bound(index))
+			{
+				return port_lower_bound(index);
+			}
+
+			if (port_default_is_upper_bound(index))
+			{
+				return port_upper_bound(index);
+			}
+			
+			if (port_default_is_middle(index))
+			{
+				if (port_is_logarithmic(index))
+				{
+					return exp(log(port_lower_bound(index)) * 0.5 + log(port_upper_bound(index)) * 0.5);
+				}
+				else
+				{
+					return port_lower_bound(index) * 0.5 + port_upper_bound(index) * 0.5;
+				}
+			}
+			
+			if (port_default_is_low(index))
+			{
+				if (port_is_logarithmic(index))
+				{
+					return exp(log(port_lower_bound(index)) * 0.75 + log(port_upper_bound(index)) * 0.25);
+				}
+				else
+				{
+					return port_lower_bound(index) * 0.75 + port_upper_bound(index) * 0.25;
+				}
+			}
+
+			if (port_default_is_high(index))
+			{
+				if (port_is_logarithmic(index))
+				{
+					return exp(log(port_lower_bound(index)) * 0.25 + log(port_upper_bound(index)) * 0.75);
+				}
+				else
+				{
+					return port_lower_bound(index) * 0.25 + port_upper_bound(index) * 0.75;
+				}
+			}
+
+			throw std::logic_error("Unhandled default case - this is a bug in ladspamm. Please report to the author..");
 		}
 	};
 	

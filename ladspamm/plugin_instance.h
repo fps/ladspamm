@@ -91,6 +91,9 @@ namespace ladspamm
 			the_plugin->descriptor->connect_port(handle, port_index, location);
 		}
 		
+		/**
+		 * Scaled by the samplerate if nessecary.
+		 */
 		LADSPA_Data port_lower_bound(unsigned int index)
 		throw
 		(
@@ -110,6 +113,9 @@ namespace ladspamm
 			return the_plugin->port_lower_bound(index);
 		}
 		
+		/**
+		 * Scaled by the samplerate if nessecary.
+		 */
 		LADSPA_Data port_upper_bound(unsigned int index)
 		throw
 		(
@@ -161,6 +167,10 @@ namespace ladspamm
 			return guess;
 		}
 		
+		/**
+		 * Rounded if port_is_integer() and scaled by
+		 * samplrate if nessecary
+		 */
 		LADSPA_Data port_default(unsigned int index)
 		throw
 		(
@@ -169,92 +179,15 @@ namespace ladspamm
 		{
 			if (the_plugin->port_is_integer(index))
 			{
-				return round(port_default0(index));
-			}
-			else
-			{
-				return port_default0(index);
-			}
-		}
-		
-		LADSPA_Data port_default0(unsigned int index)
-		throw
-		(
-			std::logic_error
-		)
-		{
-			if (false == the_plugin->port_has_default(index))
-			{
-				throw std::logic_error("Port has no default");
+				return round(the_plugin->port_default(index));
 			}
 			
-			if (the_plugin->port_default_is_0(index))
+			if (the_plugin->port_default_is_scaled_by_samplerate(index))
 			{
-				return 0;
+				return samplerate * the_plugin->port_default(index);
 			}
 			
-			if (the_plugin->port_default_is_1(index))
-			{
-				return 1;
-			}
-			
-			if (the_plugin->port_default_is_100(index))
-			{
-				return 100;
-			}
-			
-			if (the_plugin->port_default_is_440(index))
-			{
-				return 440;
-			}
-			
-			if (the_plugin->port_default_is_lower_bound(index))
-			{
-				return port_lower_bound(index);
-			}
-
-			if (the_plugin->port_default_is_upper_bound(index))
-			{
-				return port_upper_bound(index);
-			}
-			
-			if (the_plugin->port_default_is_middle(index))
-			{
-				if (the_plugin->port_is_logarithmic(index))
-				{
-					return exp(log(port_lower_bound(index)) * 0.5 + log(port_upper_bound(index)) * 0.5);
-				}
-				else
-				{
-					return port_lower_bound(index) * 0.5 + port_upper_bound(index) * 0.5;
-				}
-			}
-			
-			if (the_plugin->port_default_is_low(index))
-			{
-				if (the_plugin->port_is_logarithmic(index))
-				{
-					return exp(log(port_lower_bound(index)) * 0.75 + log(port_upper_bound(index)) * 0.25);
-				}
-				else
-				{
-					return port_lower_bound(index) * 0.75 + port_upper_bound(index) * 0.25;
-				}
-			}
-
-			if (the_plugin->port_default_is_high(index))
-			{
-				if (the_plugin->port_is_logarithmic(index))
-				{
-					return exp(log(port_lower_bound(index)) * 0.25 + log(port_upper_bound(index)) * 0.75);
-				}
-				else
-				{
-					return port_lower_bound(index) * 0.25 + port_upper_bound(index) * 0.75;
-				}
-			}
-
-			throw std::logic_error("Unhandled default case - this is a bug in ladspamm. Please report to the author..");
+			return the_plugin->port_default(index);
 		}
 		
 		void run(unsigned long nframes)
