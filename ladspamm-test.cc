@@ -19,8 +19,6 @@ int main()
 			{
 				ladspamm::plugin_instance_ptr instance(new ladspamm::plugin_instance(world.libraries[lib_index]->plugins[plugin_index], 48000));
 				
-				float f;
-				
 				std::cout << "  Name: " << instance->plugin()->name() << std::endl;
 
 				for (unsigned int port_index = 0; port_index < instance->plugin()->port_count(); ++port_index)
