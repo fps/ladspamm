@@ -22,7 +22,7 @@ namespace ladspamm
 		
 		/**
 		 * Some plugins make wrong assumptions about ports being connected before 
-		 * activate() being called, thus we'll connect them to a small array 
+		 * activate() gets called, thus we'll connect them to a small array 
 		 * to make them not crash
 		 */
 		float buf[8];
