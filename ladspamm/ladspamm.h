@@ -25,7 +25,7 @@ namespace ladspamm
 		
 		if (NULL == path) 
 		{
-			throw std::runtime_error("Enironment variable " + environment_variable_name + " not found in environment");
+			return "/usr/lib/ladspa";
 		}
 		
 		return std::string(path);
