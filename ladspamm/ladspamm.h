@@ -25,7 +25,7 @@ namespace ladspamm
 		
 		if (NULL == path) 
 		{
-			return "/usr/lib/ladspa";
+			return "/usr/lib/ladspa:/usr/local/lib/ladspa";
 		}
 		
 		return std::string(path);
