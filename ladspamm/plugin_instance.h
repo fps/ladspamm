@@ -148,6 +148,10 @@ namespace ladspamm
 			{
 				return round(port_default0(index));
 			}
+			else
+			{
+				return port_default0(index);
+			}
 		}
 		
 		LADSPA_Data port_default0(unsigned int index)
