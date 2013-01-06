@@ -136,6 +136,10 @@ namespace ladspamm
 		 * or no default at all
 		 */
 		LADSPA_Data port_default_guessed(unsigned int index)
+		throw
+		(
+			std::logic_error
+		)
 		{
 			LADSPA_Data guess = 0;
 			
@@ -158,6 +162,10 @@ namespace ladspamm
 		}
 		
 		LADSPA_Data port_default(unsigned int index)
+		throw
+		(
+			std::logic_error
+		)
 		{
 			if (the_plugin->port_is_integer(index))
 			{
