@@ -24,3 +24,7 @@ test: ladspamm-test.cc
 	PREFIX=./test make install
 	g++ -g -O0 -o ladspamm-$(VERSION)-test  ladspamm-test.cc `PKG_CONFIG_PATH=./test/lib/pkgconfig pkg-config ladspamm-$(VERSION) --cflags --libs`
 
+docs:
+	PREFIX=./test make install
+	doxygen
+
