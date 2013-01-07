@@ -169,7 +169,7 @@ namespace ladspamm
 		
 		/**
 		 * Rounded if port_is_integer() and scaled by
-		 * samplrate if nessecary
+		 * samplerate if nessecary
 		 */
 		LADSPA_Data port_default(unsigned int index)
 		throw
