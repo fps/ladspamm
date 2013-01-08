@@ -12,6 +12,10 @@
 
 namespace ladspamm 
 {
+	/**
+	 * @brief Represents a LADSPA plugin. See plugin_instance
+	 * for creating instances
+	 */
 	struct plugin
 	:
 		boost::noncopyable

@@ -12,6 +12,9 @@
 
 namespace ladspamm
 {
+	/**
+	 * @brief Represents an instance of a LADSPA plugin.
+	 */
 	struct plugin_instance 
 	: 
 		boost::noncopyable 
@@ -21,7 +24,7 @@ namespace ladspamm
 		unsigned long samplerate;
 		
 		/**
-		 * Some plugins make wrong assumptions about ports being connected before 
+		 * @brief Some plugins make wrong assumptions about ports being connected before 
 		 * activate() gets called, thus we'll connect them to a small array 
 		 * to make them not crash
 		 */
@@ -92,7 +95,7 @@ namespace ladspamm
 		}
 		
 		/**
-		 * Scaled by the samplerate if nessecary.
+		 * @brief Scaled by the samplerate if nessecary.
 		 */
 		LADSPA_Data port_lower_bound(unsigned int index)
 		throw
@@ -114,7 +117,7 @@ namespace ladspamm
 		}
 		
 		/**
-		 * Scaled by the samplerate if nessecary.
+		 * @brief Scaled by the samplerate if nessecary.
 		 */
 		LADSPA_Data port_upper_bound(unsigned int index)
 		throw
@@ -136,7 +139,7 @@ namespace ladspamm
 		}
 		
 		/**
-		 * This function tries to do an educated
+		 * @brief This function tries to do an educated
 		 * guess when the plugin does silly things like
 		 * specifying default values outside of bounds
 		 * or no default at all
@@ -168,7 +171,7 @@ namespace ladspamm
 		}
 		
 		/**
-		 * Rounded if port_is_integer() and scaled by
+		 * @brief Rounded if port_is_integer() and scaled by
 		 * samplerate if nessecary
 		 */
 		LADSPA_Data port_default(unsigned int index)

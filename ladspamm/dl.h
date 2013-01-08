@@ -8,7 +8,7 @@
 namespace ladspamm
 {
 	/**
-	* A utility type just to get a reference counted
+	* @brief A utility type just to get a reference counted
 	* dlopen() handle..
 	*/
 	struct dl : boost::noncopyable 

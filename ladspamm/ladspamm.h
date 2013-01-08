@@ -12,9 +12,23 @@
 #include <ladspamm-VERSION/dl.h>
 #include <ladspamm-VERSION/library.h>
 
+/**
+ * \mainpage ladspamm
+ *
+ * @brief ladspamm is a simple C++ library for handling (finding, loading 
+ * and instantiating) LADSPA plugins.	
+ */
+
+/**
+ * \namespace ladspamm
+ * 
+ * @brief All ladspamm classes and functions are in this namespace.
+ */
 namespace ladspamm 
 {
-
+	/**
+	 * @brief Utility function to get the LADSPA_PATH environment variable.
+	 */
 	inline std::string get_path_from_environment(std::string environment_variable_name = "LADSPA_PATH")
 	{
 		char *path = getenv(environment_variable_name.c_str());
@@ -27,6 +41,9 @@ namespace ladspamm
 		return std::string(path);
 	}
 
+	/**
+	 * @brief Utility function to split a path into components.
+	 */
 	inline std::vector<std::string> split_path(std::string path, char separator) 
 	{
 		std::vector<std::string> components;
@@ -41,6 +58,9 @@ namespace ladspamm
 		return components;
 	}
 
+	/**
+	 * @brief Find all libraries in LADSPA_PATH.
+	 */
 	inline std::vector<library_ptr> world_scan
 	(
 		std::string path

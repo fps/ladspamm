@@ -11,6 +11,10 @@
 
 namespace ladspamm
 {
+	/**
+	 * @brief Represents a LADSPA library file containing 
+	 * (possibly) several plugins.
+	 */
 	struct library 
 	: 
 		boost::noncopyable 
@@ -19,6 +23,9 @@ namespace ladspamm
 
 		std::vector<plugin_ptr> plugins;
 		
+		/**
+		 * @brief Constructs a library object using a dl object.
+		 */
 		library(dl_ptr the_dl) 
 		throw 
 		(
@@ -30,6 +37,10 @@ namespace ladspamm
 			init();
 		}
 		
+		/**
+		 * @brief Constructs a library object from a given
+		 * filename
+		 */
 		library(std::string filename)
 		throw 
 		(
