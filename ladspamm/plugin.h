@@ -200,7 +200,7 @@ namespace ladspamm
 		}
 		
 		/**
-		 * Not rounded even if port_is_integer. See plugin_instance::port_default()
+		 * @brief Not rounded even if port_is_integer. See plugin_instance::port_default()
 		 */
 		LADSPA_Data port_default(unsigned int index)
 		throw
