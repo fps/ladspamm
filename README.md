@@ -36,7 +36,7 @@ Checkout the ladspamm-test.cc file for some usage info.
 
 # DOCUMENTATION
 
-Use the source, Luke!
+Use the source, Luke! But besides that there should also be a doxygen documentation at http://fps.github.com/ladspamm
 
 # AUTHOR
 

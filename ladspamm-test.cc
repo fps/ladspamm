@@ -27,41 +27,41 @@ void analyseplugin(ladspamm::plugin_ptr plugin)
 
 		std::cout << std::endl;
 		
-		if (instance->the_plugin->port_is_bounded_below(port_index))
+		if (instance->plugin()->port_is_bounded_below(port_index))
 		{
 			std::cout << "      Lower bound: " << instance->port_lower_bound(port_index) << std::endl;
 		}
 
-		if (instance->the_plugin->port_is_bounded_above(port_index))
+		if (instance->plugin()->port_is_bounded_above(port_index))
 		{
 			std::cout << "      Upper bound: " << instance->port_upper_bound(port_index) << std::endl;
 		}
 		
-		if (instance->the_plugin->port_has_default(port_index))
+		if (instance->plugin()->port_has_default(port_index))
 		{
 			std::cout << "      Default: " << instance->port_default_guessed(port_index);
 			
-			if (instance->the_plugin->port_default_is_lower_bound(port_index))
+			if (instance->plugin()->port_default_is_lower_bound(port_index))
 			{
 				std::cout << " (default is lower bound)";
 			}
 			
-			if (instance->the_plugin->port_default_is_upper_bound(port_index))
+			if (instance->plugin()->port_default_is_upper_bound(port_index))
 			{
 				std::cout << " (default is upper bound)";
 			}
 			
-			if (instance->the_plugin->port_default_is_low(port_index))
+			if (instance->plugin()->port_default_is_low(port_index))
 			{
 				std::cout << " (default is low)";
 			}
 			
-			if (instance->the_plugin->port_default_is_high(port_index))
+			if (instance->plugin()->port_default_is_high(port_index))
 			{
 				std::cout << " (default is high)";
 			}
 			
-			if (instance->the_plugin->port_default_is_middle(port_index))
+			if (instance->plugin()->port_default_is_middle(port_index))
 			{
 				std::cout << " (default is middle)";
 			}
