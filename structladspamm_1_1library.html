@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -93,12 +93,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>Represents a LADSPA library file containing (possibly) several plugins.  
+ <a href="structladspamm_1_1library.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="library_8h_source.html">library.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a4c8d7543e5edb26ee30becec1550b18c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structladspamm_1_1library.html#a4c8d7543e5edb26ee30becec1550b18c">library</a> (<a class="el" href="namespaceladspamm.html#a4d3a7e048d8c927c3395cc873585771c">dl_ptr</a> <a class="el" href="structladspamm_1_1library.html#af9ef07172ca5d7cad024d37aa30da69a">the_dl</a>)  throw (			std::runtime_error		)</td></tr>
+<tr class="memdesc:a4c8d7543e5edb26ee30becec1550b18c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a library object using a dl object.  <a href="#a4c8d7543e5edb26ee30becec1550b18c"></a><br/></td></tr>
 <tr class="memitem:a7a0a476ce296f8426aea0b2bddd32241"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structladspamm_1_1library.html#a7a0a476ce296f8426aea0b2bddd32241">library</a> (std::string filename)  throw (			std::runtime_error		)</td></tr>
+<tr class="memdesc:a7a0a476ce296f8426aea0b2bddd32241"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a library object from a given filename.  <a href="#a7a0a476ce296f8426aea0b2bddd32241"></a><br/></td></tr>
 <tr class="memitem:a0e7616e9381b5df19211566ba68d019f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structladspamm_1_1library.html#a0e7616e9381b5df19211566ba68d019f">init</a> ()  throw (			std::runtime_error		)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-attribs"></a>
@@ -107,8 +112,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:afc67e9979fe966f02e4c24e7f323c8cd"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="namespaceladspamm.html#a2b504456390456619b36ab6690c99800">plugin_ptr</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structladspamm_1_1library.html#afc67e9979fe966f02e4c24e7f323c8cd">plugins</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="library_8h_source.html#l00014">14</a> of file <a class="el" href="library_8h_source.html">library.h</a>.</p>
+<div class="textblock"><p>Represents a LADSPA library file containing (possibly) several plugins. </p>
+
+<p>Definition at line <a class="el" href="library_8h_source.html#l00018">18</a> of file <a class="el" href="library_8h_source.html">library.h</a>.</p>
 </div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a4c8d7543e5edb26ee30becec1550b18c"></a>
 <div class="memitem">
@@ -132,7 +138,9 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="library_8h_source.html#l00022">22</a> of file <a class="el" href="library_8h_source.html">library.h</a>.</p>
+<p>Constructs a library object using a dl object. </p>
+
+<p>Definition at line <a class="el" href="library_8h_source.html#l00029">29</a> of file <a class="el" href="library_8h_source.html">library.h</a>.</p>
 
 </div>
 </div>
@@ -158,7 +166,9 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="library_8h_source.html#l00033">33</a> of file <a class="el" href="library_8h_source.html">library.h</a>.</p>
+<p>Constructs a library object from a given filename. </p>
+
+<p>Definition at line <a class="el" href="library_8h_source.html#l00044">44</a> of file <a class="el" href="library_8h_source.html">library.h</a>.</p>
 
 </div>
 </div>
@@ -184,7 +194,7 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="library_8h_source.html#l00043">43</a> of file <a class="el" href="library_8h_source.html">library.h</a>.</p>
+<p>Definition at line <a class="el" href="library_8h_source.html#l00054">54</a> of file <a class="el" href="library_8h_source.html">library.h</a>.</p>
 
 </div>
 </div>
@@ -199,7 +209,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="library_8h_source.html#l00020">20</a> of file <a class="el" href="library_8h_source.html">library.h</a>.</p>
+<p>Definition at line <a class="el" href="library_8h_source.html#l00024">24</a> of file <a class="el" href="library_8h_source.html">library.h</a>.</p>
 
 </div>
 </div>
@@ -213,7 +223,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="library_8h_source.html#l00018">18</a> of file <a class="el" href="library_8h_source.html">library.h</a>.</p>
+<p>Definition at line <a class="el" href="library_8h_source.html#l00022">22</a> of file <a class="el" href="library_8h_source.html">library.h</a>.</p>
 
 </div>
 </div>
@@ -223,7 +233,7 @@ Public Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 7 2013 10:44:21 for ladspamm by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jan 8 2013 19:17:36 for ladspamm by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

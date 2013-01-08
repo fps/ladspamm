@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['ladspamm',['ladspamm',['../index.html',1,'']]],
   ['label',['label',['../structladspamm_1_1plugin.html#a622531bd32b7114fba68fa39e24cc60c',1,'ladspamm::plugin']]],
   ['ladspamm',['ladspamm',['../namespaceladspamm.html',1,'']]],
   ['ladspamm_2eh',['ladspamm.h',['../ladspamm_8h.html',1,'']]],

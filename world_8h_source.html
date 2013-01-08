@@ -67,7 +67,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -96,28 +96,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span>ladspamm </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="code" href="structladspamm_1_1world.html">   11</a></span>&#160;        <span class="keyword">struct </span><a class="code" href="structladspamm_1_1world.html">world</a></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        {       </div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="code" href="structladspamm_1_1world.html#a016d8fb9b7ca5a0c73b6f0b1a8a9c81d">   13</a></span>&#160;                <span class="keyword">const</span> std::vector&lt;ladspamm::library_ptr&gt; <a class="code" href="structladspamm_1_1world.html#a016d8fb9b7ca5a0c73b6f0b1a8a9c81d">libraries</a>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="code" href="structladspamm_1_1world.html#af29b51ad36476231b72254cdd37520cc">   15</a></span>&#160;                <a class="code" href="structladspamm_1_1world.html#af29b51ad36476231b72254cdd37520cc">world</a>(std::string path = <a class="code" href="namespaceladspamm.html#acf91ef43e8d44928a07d548f7a883a82">get_path_from_environment</a>())</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                throw </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                (</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                        std::runtime_error</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                )</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                :</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                        <a class="code" href="structladspamm_1_1world.html#a016d8fb9b7ca5a0c73b6f0b1a8a9c81d">libraries</a>(ladspamm::<a class="code" href="namespaceladspamm.html#a14f577ff842e4f0c4ecef7f69193269f">world_scan</a>(path))</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                        </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                }</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        };</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;} <span class="comment">// namespace</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="code" href="structladspamm_1_1world.html">   14</a></span>&#160;        <span class="keyword">struct </span><a class="code" href="structladspamm_1_1world.html" title="This class represents the world of LADSPA plugins.">world</a></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        {       </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="structladspamm_1_1world.html#a016d8fb9b7ca5a0c73b6f0b1a8a9c81d">   19</a></span>&#160;                <span class="keyword">const</span> std::vector&lt;ladspamm::library_ptr&gt; <a class="code" href="structladspamm_1_1world.html#a016d8fb9b7ca5a0c73b6f0b1a8a9c81d" title="The libraries found in the system.">libraries</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="structladspamm_1_1world.html#af29b51ad36476231b72254cdd37520cc">   25</a></span>&#160;                <a class="code" href="structladspamm_1_1world.html#af29b51ad36476231b72254cdd37520cc" title="This constructor scans the system (parsing LADSPA_PATH or using sensible defaults).">world</a>(std::string path = <a class="code" href="namespaceladspamm.html#acf91ef43e8d44928a07d548f7a883a82" title="Utility function to get the LADSPA_PATH environment variable.">get_path_from_environment</a>())</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                throw </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                (</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                        std::runtime_error</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                )</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                :</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                        <a class="code" href="structladspamm_1_1world.html#a016d8fb9b7ca5a0c73b6f0b1a8a9c81d" title="The libraries found in the system.">libraries</a>(ladspamm::<a class="code" href="namespaceladspamm.html#a14f577ff842e4f0c4ecef7f69193269f" title="Find all libraries in LADSPA_PATH.">world_scan</a>(path))</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                        </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        };</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 7 2013 10:44:21 for ladspamm by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jan 8 2013 19:17:36 for ladspamm by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

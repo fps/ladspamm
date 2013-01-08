@@ -68,7 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -87,14 +87,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">ladspamm Namespace Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>All ladspamm classes and functions are in this namespace.  
+<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structladspamm_1_1dl.html">dl</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A utility type just to get a reference counted dlopen() handle..  <a href="structladspamm_1_1dl.html#details">More...</a><br/></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structladspamm_1_1library.html">library</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a LADSPA library file containing (possibly) several plugins.  <a href="structladspamm_1_1library.html#details">More...</a><br/></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structladspamm_1_1plugin.html">plugin</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a LADSPA plugin. See <a class="el" href="structladspamm_1_1plugin__instance.html" title="Represents an instance of a LADSPA plugin.">plugin_instance</a> for creating instances.  <a href="structladspamm_1_1plugin.html#details">More...</a><br/></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structladspamm_1_1plugin__instance.html">plugin_instance</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents an instance of a LADSPA plugin.  <a href="structladspamm_1_1plugin__instance.html#details">More...</a><br/></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structladspamm_1_1world.html">world</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class represents the world of LADSPA plugins.  <a href="structladspamm_1_1world.html#details">More...</a><br/></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -108,10 +116,15 @@ Typedefs</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:acf91ef43e8d44928a07d548f7a883a82"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceladspamm.html#acf91ef43e8d44928a07d548f7a883a82">get_path_from_environment</a> (std::string environment_variable_name=&quot;LADSPA_PATH&quot;)</td></tr>
+<tr class="memdesc:acf91ef43e8d44928a07d548f7a883a82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility function to get the LADSPA_PATH environment variable.  <a href="#acf91ef43e8d44928a07d548f7a883a82"></a><br/></td></tr>
 <tr class="memitem:a6ac3b0fca4b4936bcd178c173636cd90"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceladspamm.html#a6ac3b0fca4b4936bcd178c173636cd90">split_path</a> (std::string path, char separator)</td></tr>
+<tr class="memdesc:a6ac3b0fca4b4936bcd178c173636cd90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility function to split a path into components.  <a href="#a6ac3b0fca4b4936bcd178c173636cd90"></a><br/></td></tr>
 <tr class="memitem:a14f577ff842e4f0c4ecef7f69193269f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="namespaceladspamm.html#a77b8d7c279739fa93409b6e2a5dc8b58">library_ptr</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceladspamm.html#a14f577ff842e4f0c4ecef7f69193269f">world_scan</a> (std::string path)  throw (		std::runtime_error	)</td></tr>
+<tr class="memdesc:a14f577ff842e4f0c4ecef7f69193269f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find all libraries in LADSPA_PATH.  <a href="#a14f577ff842e4f0c4ecef7f69193269f"></a><br/></td></tr>
 </table>
-<h2>Typedef Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>All ladspamm classes and functions are in this namespace. </p>
+</div><h2>Typedef Documentation</h2>
 <a class="anchor" id="a4d3a7e048d8c927c3395cc873585771c"></a>
 <div class="memitem">
 <div class="memproto">
@@ -136,7 +149,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="library_8h_source.html#l00074">74</a> of file <a class="el" href="library_8h_source.html">library.h</a>.</p>
+<p>Definition at line <a class="el" href="library_8h_source.html#l00085">85</a> of file <a class="el" href="library_8h_source.html">library.h</a>.</p>
 
 </div>
 </div>
@@ -150,7 +163,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="plugin__instance_8h_source.html#l00199">199</a> of file <a class="el" href="plugin__instance_8h_source.html">plugin_instance.h</a>.</p>
+<p>Definition at line <a class="el" href="plugin__instance_8h_source.html#l00202">202</a> of file <a class="el" href="plugin__instance_8h_source.html">plugin_instance.h</a>.</p>
 
 </div>
 </div>
@@ -164,7 +177,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="plugin_8h_source.html#l00282">282</a> of file <a class="el" href="plugin_8h_source.html">plugin.h</a>.</p>
+<p>Definition at line <a class="el" href="plugin_8h_source.html#l00286">286</a> of file <a class="el" href="plugin_8h_source.html">plugin.h</a>.</p>
 
 </div>
 </div>
@@ -191,7 +204,9 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="ladspamm_8h_source.html#l00018">18</a> of file <a class="el" href="ladspamm_8h_source.html">ladspamm.h</a>.</p>
+<p>Utility function to get the LADSPA_PATH environment variable. </p>
+
+<p>Definition at line <a class="el" href="ladspamm_8h_source.html#l00032">32</a> of file <a class="el" href="ladspamm_8h_source.html">ladspamm.h</a>.</p>
 
 </div>
 </div>
@@ -227,7 +242,9 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="ladspamm_8h_source.html#l00030">30</a> of file <a class="el" href="ladspamm_8h_source.html">ladspamm.h</a>.</p>
+<p>Utility function to split a path into components. </p>
+
+<p>Definition at line <a class="el" href="ladspamm_8h_source.html#l00047">47</a> of file <a class="el" href="ladspamm_8h_source.html">ladspamm.h</a>.</p>
 
 </div>
 </div>
@@ -253,14 +270,16 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="ladspamm_8h_source.html#l00045">45</a> of file <a class="el" href="ladspamm_8h_source.html">ladspamm.h</a>.</p>
+<p>Find all libraries in LADSPA_PATH. </p>
+
+<p>Definition at line <a class="el" href="ladspamm_8h_source.html#l00065">65</a> of file <a class="el" href="ladspamm_8h_source.html">ladspamm.h</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 7 2013 10:44:21 for ladspamm by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jan 8 2013 19:17:36 for ladspamm by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>
