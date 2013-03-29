@@ -5,6 +5,7 @@
 
 %shared_ptr (ladspamm::library)
 %shared_ptr (ladspamm::plugin)
+%shared_ptr (ladspamm::dl)
 
 %{
 #include "ladspamm-0/dl.h"
