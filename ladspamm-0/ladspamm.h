@@ -9,8 +9,8 @@
 #include <boost/shared_ptr.hpp>
 #include <boost/utility.hpp>
 
-#include <ladspamm-VERSION/dl.h>
-#include <ladspamm-VERSION/library.h>
+#include <ladspamm-0/dl.h>
+#include <ladspamm-0/library.h>
 
 /**
  * \mainpage ladspamm

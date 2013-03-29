@@ -7,7 +7,7 @@
 #include <stdexcept>
 #include <boost/shared_ptr.hpp>
 
-#include <ladspamm-VERSION/plugin.h>
+#include <ladspamm-0/plugin.h>
 
 namespace ladspamm
 {
