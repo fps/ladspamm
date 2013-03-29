@@ -31,4 +31,5 @@ built_python: ladspamm0.i
 
 clean:
 	rm -f _ladspamm0.so ladspamm_wrap.cc ladspamm-0-test ladspamm0.py built_python
+	rm -rf build
 	
