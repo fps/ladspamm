@@ -16,5 +16,5 @@ setup (name = 'ladspamm0',
        author      = "Florian Paul Schmidt",
        description = """Simple swig example from docs""",
        ext_modules = [example_module],
-       py_modules = ["example"],
+       py_modules = ["ladspamm0"],
        )
