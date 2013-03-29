@@ -1,7 +1,6 @@
 PREFIX ?= /usr/local
 
 INSTALL ?= install
-SED ?= sed
 
 INCLUDE_PATH = $(PREFIX)/include/ladspamm-0
 PKGCONFIG_DIR ?= $(PREFIX)/lib/pkgconfig
@@ -18,7 +17,7 @@ install:
 	$(INSTALL) ladspamm-0/*.h $(INCLUDE_PATH)
 
 test: ladspamm-test.cc
-	g++ -ansi -Wall -g -O0 -o ladspamm-0-test  ladspamm-test.cc -ldl
+	g++ -ansi -Wall -g -O0 -o ladspamm-0-test  ladspamm-test.cc -ldl -lboost_system -lboost_filesystem
 
 docs:
 	PREFIX=./test make install
