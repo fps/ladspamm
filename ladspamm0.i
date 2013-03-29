@@ -9,6 +9,7 @@
 %{
 #include "ladspamm-0/dl.h"
 #include "ladspamm-0/plugin.h"
+#include "ladspamm-0/plugin_instance.h"
 #include "ladspamm-0/library.h"
 #include "ladspamm-0/world.h"
 %}
@@ -21,6 +22,7 @@
 
 %include "ladspamm-0/dl.h"
 %include "ladspamm-0/plugin.h"
+%include "ladspamm-0/plugin_instance.h"
 %include "ladspamm-0/library.h"
 %include "ladspamm-0/world.h"
 
