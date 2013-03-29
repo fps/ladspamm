@@ -1,6 +1,7 @@
 PREFIX ?= /usr/local
 
 INSTALL ?= install
+SED ?= sed
 
 INCLUDE_PATH = $(PREFIX)/include/ladspamm-0
 PKGCONFIG_DIR ?= $(PREFIX)/lib/pkgconfig
@@ -24,7 +25,7 @@ docs:
 
 _ladspamm0.so: ladspamm0.i
 	swig -python -c++ -o ladspamm_wrap.cc ladspamm0.i
-	python setup.py  build_ext --inplace -ldl -lboost_system -lboost_filesystem -I .
+	python setup.py build_ext --inplace -ldl -lboost_system -lboost_filesystem -I .
 
 clean:
 	rm -f _ladspamm0.so ladspamm_wrap.cc ladspamm-0-test ladspamm0.py
