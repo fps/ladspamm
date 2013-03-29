@@ -1,5 +1,5 @@
-#ifndef LIBRARY_HH
-#define LIBRARY_HH
+#ifndef LADSPAMM_DL_HH
+#define LADSPAMM_DL_HH
 
 #include <dlfcn.h>
 #include <boost/noncopyable.hpp>

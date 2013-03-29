@@ -1,5 +1,5 @@
-#ifndef LADSPAPP_LADSPA_WORLD_HH
-#define LADSPAPP_LADSPA_WORLD_HH
+#ifndef LADSPAMM_WORLD_HH
+#define LADSPAMM_WORLD_HH
 
 #include <string>
 #include <vector>

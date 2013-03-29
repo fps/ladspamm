@@ -1,5 +1,5 @@
-#ifndef LADSPAPP_LADSPA_LIBRARY_HH
-#define LADSPAPP_LADSPA_LIBRARY_HH
+#ifndef LADSPAMM_LIBRARY_HH
+#define LADSPAMM_LIBRARY_HH
 
 #include <string>
 #include <vector>

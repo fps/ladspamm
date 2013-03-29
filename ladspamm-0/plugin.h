@@ -1,5 +1,5 @@
-#ifndef LADSPA_PLUGIN_HH
-#define LADSPA_PLUGIN_HH
+#ifndef LADSPAMM_PLUGIN_HH
+#define LADSPAMM_PLUGIN_HH
 
 #include <string>
 #include <boost/shared_ptr.hpp>
