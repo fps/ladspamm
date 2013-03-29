@@ -7,7 +7,7 @@ PKGCONFIG_DIR ?= $(PREFIX)/lib/pkgconfig
 
 .PHONY: install all clean
 
-all: test python_swig
+all: ladspamm-0-test _ladspamm0.so
 
 install: all
 	$(INSTALL) -d $(PKGCONFIG_DIR)
@@ -16,15 +16,16 @@ install: all
 	$(INSTALL) -d $(INCLUDE_PATH)
 	$(INSTALL) ladspamm-0/*.h $(INCLUDE_PATH)
 
-test: ladspamm-test.cc
+ladspamm-0-test: ladspamm-test.cc
 	g++ -ansi -Wall -g -O0 -o ladspamm-0-test  ladspamm-test.cc -ldl -lboost_system -lboost_filesystem
 
 docs:
 	doxygen
 
-python_swig: ladspamm0.i
+_ladspamm0.so: ladspamm0.i
 	swig -python -c++ -o ladspamm_wrap.cc ladspamm0.i
-	g++ -fPIC -shared -o ladspamm0.so ladspamm_wrap.cc `pkg-config python-2.7 --cflags --libs` -ldl -lboost_system -lboost_filesystem
+	python setup.py  build_ext --inplace -ldl -lboost_system -lboost_filesystem
 
 clean:
-	rm -f ladspamm0.so ladspamm_wrap.cc ladspamm-0-test ladspamm0.py
+	rm -f _ladspamm0.so ladspamm_wrap.cc ladspamm-0-test ladspamm0.py
+	
