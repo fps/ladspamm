@@ -85,12 +85,12 @@ namespace ladspamm
 			return LADSPA_IS_PORT_CONTROL(descriptor->PortDescriptors[index]);
 		}
 
-		LADSPA_Data port_lower_bound(unsigned int index)
+		float port_lower_bound(unsigned int index)
 		{
 			return descriptor->PortRangeHints[index].LowerBound;
 		}
 
-		LADSPA_Data port_upper_bound(unsigned int index)
+		float port_upper_bound(unsigned int index)
 		{
 			return descriptor->PortRangeHints[index].UpperBound;
 		}
@@ -202,7 +202,7 @@ namespace ladspamm
 		/**
 		 * @brief Not rounded even if port_is_integer. See plugin_instance::port_default()
 		 */
-		LADSPA_Data port_default(unsigned int index)
+		float port_default(unsigned int index)
 		throw
 		(
 			std::logic_error

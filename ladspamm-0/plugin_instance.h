@@ -89,7 +89,7 @@ namespace ladspamm
 			}
 		}
 		
-		void connect_port(unsigned long port_index, LADSPA_Data *location)
+		void connect_port(unsigned long port_index, float *location)
 		{
 			the_plugin->descriptor->connect_port(handle, port_index, location);
 		}
@@ -97,7 +97,7 @@ namespace ladspamm
 		/**
 		 * @brief Scaled by the samplerate if nessecary.
 		 */
-		LADSPA_Data port_lower_bound(unsigned int index)
+		float port_lower_bound(unsigned int index)
 		throw
 		(
 			std::logic_error
@@ -119,7 +119,7 @@ namespace ladspamm
 		/**
 		 * @brief Scaled by the samplerate if nessecary.
 		 */
-		LADSPA_Data port_upper_bound(unsigned int index)
+		float port_upper_bound(unsigned int index)
 		throw
 		(
 			std::logic_error
@@ -144,13 +144,13 @@ namespace ladspamm
 		 * specifying default values outside of bounds
 		 * or no default at all
 		 */
-		LADSPA_Data port_default_guessed(unsigned int index)
+		float port_default_guessed(unsigned int index)
 		throw
 		(
 			std::logic_error
 		)
 		{
-			LADSPA_Data guess = 0;
+			float guess = 0;
 			
 			if (the_plugin->port_has_default(index))
 			{
@@ -174,7 +174,7 @@ namespace ladspamm
 		 * @brief Rounded if port_is_integer() and scaled by
 		 * samplerate if nessecary
 		 */
-		LADSPA_Data port_default(unsigned int index)
+		float port_default(unsigned int index)
 		throw
 		(
 			std::logic_error
