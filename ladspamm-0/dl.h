@@ -4,6 +4,7 @@
 #include <dlfcn.h>
 #include <boost/noncopyable.hpp>
 #include <boost/shared_ptr.hpp>
+#include <stdexcept>
 
 namespace ladspamm
 {

@@ -10,10 +10,11 @@ void analyseplugin(ladspamm::plugin_ptr plugin)
 	ladspamm::plugin_instance_ptr instance(new ladspamm::plugin_instance(plugin, 48000));
 	
 	std::cout << "  Name: " << instance->plugin()->name() << std::endl;
+	std::cout << "  Label: " << instance->plugin()->label() << std::endl;
 
 	for (unsigned int port_index = 0; port_index < instance->plugin()->port_count(); ++port_index)
 	{
-		std::cout << "    Port: " << instance->plugin()->port_name(port_index);
+		std::cout << "    " << port_index << " Port: " << instance->plugin()->port_name(port_index);
 		
 		if (instance->plugin()->port_is_logarithmic(port_index))
 		{
