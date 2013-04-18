@@ -47,7 +47,7 @@ namespace ladspamm
 			
 			if (NULL == handle)
 			{
-				throw std::runtime_error("Failed to instantiate plugin");
+				throw std::runtime_error("Failed to instantiate plugin " + the_plugin->the_dl->filename + " " + the_plugin->label());
 			}
 			
 			/**
