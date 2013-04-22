@@ -18,7 +18,7 @@ install: all
 	$(INSTALL) ladspamm-0/*.h $(INCLUDE_PATH)
 
 ladspamm-0-test: ladspamm-test.cc
-	g++ -I .  -ansi -Wall -g -O0 -o ladspamm-0-test  ladspamm-test.cc -ldl -lboost_system -lboost_filesystem
+	g++ -I .  -ansi -Wall -g -O0 -o ladspamm-0-test  ladspamm-test.cc -ldl -lboost_filesystem -lboost_system 
 
 docs:
 	doxygen
