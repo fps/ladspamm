@@ -1,10 +1,10 @@
-prefix=PREFIX
+prefix=@CMAKE_INSTALL_PREFIX@
 exec_prefix=${prefix}
 includedir=${prefix}/include
 libdir=${exec_prefix}/lib
 
-Name: ladspamm-0
+Name: ladspamm-@PROJECT_VERSION@
 Description: The ladspamm library
-Version: 0.0.1
+Version: @PROJECT_VERSION@
 Cflags: -I${includedir}/
-Libs: -lboost_filesystem -lboost_system -ldl
+Libs: 
