@@ -11,7 +11,7 @@ set(CPACK_PACKAGE_VERSION ${PROJECT_VERSION})
 set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Florian Paul Schmidt (mista.tapas@gmx.net)")
 set(CPACK_GENERATOR "DEB" "TGZ")
 set(CPACK_DEBIAN_PACKAGE_DEPENDS "libboost-filesystem-dev, libboost-system-dev")
-set(CPACK_DEBIAN_PACKAGE_NAME "libladspamm-${PROJECT_VERSION}-dev")
+set(CPACK_DEBIAN_PACKAGE_NAME "ladspamm-${PROJECT_VERSION}-dev")
 include(CPack)
 
 IF(NOT CMAKE_BUILD_TYPE)

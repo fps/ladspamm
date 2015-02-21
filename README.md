@@ -12,9 +12,7 @@ A C++ header only (out of pure laziness) library to find, inspect and instantiat
 
 * libdl
 
-* sed
-
-* make
+* cmake 2.8
 
 # INSTALLATION
 
@@ -35,19 +33,9 @@ But you can also create .tgz and .deb packages:
     dpkg -i ladspamm-1-Linux.deb
 
 
-# TESTING
-
-Build the example program with
-
-    make test
-    
-and run it with
-
-    ./ladspamm-0-test
-
 # EXAMPLE
 
-Checkout the ladspamm-test.cc file for some usage info.
+Checkout the ladspamm-test.cc.in file for an example listing installed LADSPA plugins and some of their properties.
 
 # DOCUMENTATION
 
