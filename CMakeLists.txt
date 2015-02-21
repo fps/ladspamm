@@ -32,6 +32,8 @@ configure_file(ladspamm/plugin.h.in ladspamm-${PROJECT_VERSION}/plugin.h)
 configure_file(ladspamm/plugin_instance.h.in ladspamm-${PROJECT_VERSION}/plugin_instance.h)
 configure_file(ladspamm/world.h.in ladspamm-${PROJECT_VERSION}/world.h)
 
+include_directories(${PROJECT_BINARY_DIR})
+
 add_definitions(-DPROJECT_VERSION=\"${PROJECT_VERSION}\")
 
 set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pedantic -Wconversion -Wall -pthread -fmax-errors=1")
