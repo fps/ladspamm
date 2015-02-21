@@ -10,7 +10,8 @@ set(PROJECT_VERSION "1")
 set(CPACK_PACKAGE_VERSION ${PROJECT_VERSION})
 set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Florian Paul Schmidt (mista.tapas@gmx.net)")
 set(CPACK_GENERATOR "DEB" "TGZ")
-set(CPACK_DEBIAN_PACKAGE_DEPENDS "libboost-filesystem, libboost-system")
+set(CPACK_DEBIAN_PACKAGE_DEPENDS "libboost-filesystem-dev, libboost-system-dev")
+set(CPACK_DEBIAN_PACKAGE_NAME "libladspamm-${PROJECT_VERSION}-dev")
 include(CPack)
 
 IF(NOT CMAKE_BUILD_TYPE)
@@ -90,4 +91,5 @@ target_link_libraries(ladspamm-${PROJECT_VERSION}-test ${Boost_LIBRARIES} dl)
 
 install(DIRECTORY ${PROJECT_BINARY_DIR}/ladspamm-${PROJECT_VERSION}  DESTINATION include)
 install(FILES ${PROJECT_BINARY_DIR}/ladspamm-${PROJECT_VERSION}.pc DESTINATION lib/pkgconfig)
+install(TARGETS ladspamm-${PROJECT_VERSION}-test RUNTIME DESTINATION bin)
 
