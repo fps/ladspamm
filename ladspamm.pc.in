@@ -7,4 +7,4 @@ Name: ladspamm-@PROJECT_VERSION@
 Description: The ladspamm library
 Version: @PROJECT_VERSION@
 Cflags: -I${includedir}/
-Libs: 
+Libs: -lboost_filesystem -lboost_system -ldl
