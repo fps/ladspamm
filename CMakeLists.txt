@@ -88,5 +88,6 @@ target_link_libraries(ladspamm-${PROJECT_VERSION}-test ${Boost_LIBRARIES} dl)
 # INSTALLATION
 # 
 
-install(FILES ladspamm/dl.h ladspamm/ladspamm.h ladspamm/library.h ladspamm/plugin.h ladspamm/plugin_instance.h ladspamm/world.h  DESTINATION include/ladspamm-${PROJECT_VERSION})
+install(DIRECTORY ${PROJECT_BINARY_DIR}/ladspamm-${PROJECT_VERSION}  DESTINATION include)
 install(FILES ${PROJECT_BINARY_DIR}/ladspamm-${PROJECT_VERSION}.pc DESTINATION lib/pkgconfig)
+
