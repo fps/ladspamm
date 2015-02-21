@@ -13,14 +13,14 @@
 #include <ladspamm-@PROJECT_VERSION@/library.h>
 
 /**
- * \mainpage ladspamm
+ * \mainpage ladspamm-@PROJECT_VERSION@
  *
  * @brief ladspamm is a simple C++ library for handling (finding, loading 
  * and instantiating) LADSPA plugins.	
  */
 
 /**
- * \namespace ladspamm
+ * \namespace ladspamm@PROJECT_VERSION@
  * 
  * @brief All ladspamm classes and functions are in this namespace.
  */
