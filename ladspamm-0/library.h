@@ -27,10 +27,6 @@ namespace ladspamm
 		 * @brief Constructs a library object using a dl object.
 		 */
 		library(dl_ptr the_dl) 
-		throw 
-		(
-			std::runtime_error
-		)
 		:
 			the_dl(the_dl)	
 		{
@@ -42,20 +38,12 @@ namespace ladspamm
 		 * filename
 		 */
 		library(std::string filename)
-		throw 
-		(
-			std::runtime_error
-		)
 		{
 			the_dl = dl_ptr(new dl(filename));
 			init();
 		}
 		
 		void init()
-		throw 
-		(
-			std::runtime_error
-		)
 		{
 			LADSPA_Descriptor_Function descriptor_fun = (LADSPA_Descriptor_Function)dlsym(the_dl->dl_handle, "ladspa_descriptor");
 			

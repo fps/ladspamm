@@ -23,10 +23,6 @@ namespace ladspamm
 		 * using sensible defaults).
 		 */
 		world(std::string path = get_path_from_environment())
-		throw 
-		(
-			std::runtime_error
-		)
 		:
 			libraries(ladspamm::world_scan(path))
 		{

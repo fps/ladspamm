@@ -17,7 +17,7 @@ install: all
 	$(INSTALL) -d $(INCLUDE_PATH)
 	$(INSTALL) ladspamm-0/*.h $(INCLUDE_PATH)
 
-ladspamm-0-test: ladspamm-test.cc
+ladspamm-0-test: ladspamm-test.cc ladspamm-0/dl.h ladspamm-0/ladspamm.h ladspamm-0/library.h ladspamm-0/plugin.h ladspamm-0/plugin_instance.h ladspamm-0/world.h
 	g++ -I .  -ansi -Wall -g -O0 -o ladspamm-0-test  ladspamm-test.cc -ldl -lboost_filesystem -lboost_system 
 
 docs:

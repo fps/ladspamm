@@ -65,10 +65,6 @@ namespace ladspamm
 	(
 		std::string path
 	)
-	throw 
-	(
-		std::runtime_error
-	)
 	{
 		std::vector<std::string> path_components = split_path(path, ':');
 	

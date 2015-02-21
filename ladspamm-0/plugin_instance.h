@@ -35,10 +35,6 @@ namespace ladspamm
 			plugin_ptr the_plugin,
 			unsigned long samplerate
 		)
-		throw 
-		(
-			std::runtime_error
-		)
 		:
 			the_plugin(the_plugin),
 			samplerate(samplerate)
@@ -98,10 +94,6 @@ namespace ladspamm
 		 * @brief Scaled by the samplerate if nessecary.
 		 */
 		float port_lower_bound(unsigned int index)
-		throw
-		(
-			std::logic_error
-		)
 		{
 			if (false == the_plugin->port_is_bounded_below(index))
 			{
@@ -120,10 +112,6 @@ namespace ladspamm
 		 * @brief Scaled by the samplerate if nessecary.
 		 */
 		float port_upper_bound(unsigned int index)
-		throw
-		(
-			std::logic_error
-		)
 		{
 			if (false == the_plugin->port_is_bounded_above(index))
 			{
@@ -145,10 +133,6 @@ namespace ladspamm
 		 * or no default at all
 		 */
 		float port_default_guessed(unsigned int index)
-		throw
-		(
-			std::logic_error
-		)
 		{
 			float guess = 0;
 			
@@ -175,10 +159,6 @@ namespace ladspamm
 		 * samplerate if nessecary
 		 */
 		float port_default(unsigned int index)
-		throw
-		(
-			std::logic_error
-		)
 		{
 			if (the_plugin->port_is_integer(index))
 			{

@@ -24,10 +24,6 @@ namespace ladspamm
 		const LADSPA_Descriptor *descriptor;
 		
 		plugin(dl_ptr the_dl, const LADSPA_Descriptor *descriptor)
-		throw 
-		(
-			std::runtime_error
-		)
 		:
 			the_dl(the_dl),
 			descriptor(descriptor)
@@ -203,10 +199,6 @@ namespace ladspamm
 		 * @brief Not rounded even if port_is_integer. See plugin_instance::port_default()
 		 */
 		float port_default(unsigned int index)
-		throw
-		(
-			std::logic_error
-		)
 		{
 			if (false == port_has_default(index))
 			{
