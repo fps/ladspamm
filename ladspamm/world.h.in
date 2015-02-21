@@ -1,5 +1,5 @@
-#ifndef LADSPAMM_WORLD_HH
-#define LADSPAMM_WORLD_HH
+#ifndef LADSPAMM_WORLD_@PROJECT_VERSION@_HH
+#define LADSPAMM_WORLD_@PROJECT_VERSION@_HH
 
 #include <string>
 #include <vector>
