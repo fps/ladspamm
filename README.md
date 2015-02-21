@@ -18,7 +18,22 @@ A C++ header only (out of pure laziness) library to find, inspect and instantiat
 
 # INSTALLATION
 
+If you don't want to use cmake's package creation facility, use the standard way:
+
+    mkdir bld
+    cd bld
+    cmake ..
+    make 
     make install
+
+But you can also create .tgz and .deb packages:
+
+    mkdir bld
+    cd bld
+    cmake ..
+    make package
+    dpkg -i ladspamm-1-Linux.deb
+
 
 # TESTING
 
