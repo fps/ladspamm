@@ -7,6 +7,8 @@ cmake_minimum_required (VERSION 2.8)
 project(ladspamm)
 set(PROJECT_VERSION "1")
 
+set(CMAKE_INSTALL_PREFIX /usr)
+
 set(CPACK_PACKAGE_VERSION ${PROJECT_VERSION})
 set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Florian Paul Schmidt (mista.tapas@gmx.net)")
 set(CPACK_GENERATOR "DEB" "TGZ")
