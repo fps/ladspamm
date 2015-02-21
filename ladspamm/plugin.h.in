@@ -8,9 +8,9 @@
 #include <iostream>
 #include <cmath>
 
-#include <ladspamm-0/dl.h>
+#include <ladspamm-@PROJECT_VERSION@/dl.h>
 
-namespace ladspamm 
+namespace ladspamm@PROJECT_VERSION@
 {
 	/**
 	 * @brief Represents a LADSPA plugin. See plugin_instance

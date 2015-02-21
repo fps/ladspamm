@@ -25,6 +25,13 @@ set(CMAKE_VERBOSE_MAKEFILE off)
 
 configure_file(ladspamm.pc.in ladspamm-${PROJECT_VERSION}.pc @ONLY)
 
+configure_file(ladspamm/dl.h.in ladspamm-${PROJECT_VERSION}/dl.h)
+configure_file(ladspamm/library.h.in ladspamm-${PROJECT_VERSION}/library.h)
+configure_file(ladspamm/ladspamm.h.in ladspamm-${PROJECT_VERSION}/ladspamm.h)
+configure_file(ladspamm/plugin.h.in ladspamm-${PROJECT_VERSION}/plugin.h)
+configure_file(ladspamm/plugin_instance.h.in ladspamm-${PROJECT_VERSION}/plugin_instance.h)
+configure_file(ladspamm/world.h.in ladspamm-${PROJECT_VERSION}/world.h)
+
 add_definitions(-DPROJECT_VERSION=\"${PROJECT_VERSION}\")
 
 set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pedantic -Wconversion -Wall -pthread -fmax-errors=1")

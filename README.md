@@ -37,7 +37,7 @@ But you can also create .tgz and .deb packages:
 
 # TESTING
 
-Build the test case with
+Build the example program with
 
     make test
     

@@ -6,7 +6,7 @@
 #include <boost/shared_ptr.hpp>
 #include <stdexcept>
 
-namespace ladspamm
+namespace ladspamm@PROJECT_VERSION@
 {
 	/**
 	* @brief A utility type just to get a reference counted

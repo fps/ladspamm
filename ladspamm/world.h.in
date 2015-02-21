@@ -4,9 +4,9 @@
 #include <string>
 #include <vector>
 
-#include <ladspamm-0/ladspamm.h>
+#include <ladspamm-@PROJECT_VERSION@/ladspamm.h>
 
-namespace ladspamm 
+namespace ladspamm@PROJECT_VERSION@
 {
 	/**
 	 * @brief This class represents the world of LADSPA plugins.

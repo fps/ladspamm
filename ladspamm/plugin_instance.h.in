@@ -8,9 +8,9 @@
 #include <algorithm>
 #include <stdexcept>
 
-#include <ladspamm-0/plugin.h>
+#include <ladspamm-@PROJECT_VERSION@/plugin.h>
 
-namespace ladspamm
+namespace ladspamm@PROJECT_VERSION@
 {
 	/**
 	 * @brief Represents an instance of a LADSPA plugin.

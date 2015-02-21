@@ -9,8 +9,8 @@
 #include <boost/shared_ptr.hpp>
 #include <boost/utility.hpp>
 
-#include <ladspamm-0/dl.h>
-#include <ladspamm-0/library.h>
+#include <ladspamm-@PROJECT_VERSION@/dl.h>
+#include <ladspamm-@PROJECT_VERSION@/library.h>
 
 /**
  * \mainpage ladspamm
@@ -24,7 +24,7 @@
  * 
  * @brief All ladspamm classes and functions are in this namespace.
  */
-namespace ladspamm 
+namespace ladspamm@PROJECT_VERSION@
 {
 	/**
 	 * @brief Utility function to get the LADSPA_PATH environment variable.
