@@ -239,11 +239,11 @@ namespace ladspamm@PROJECT_VERSION@
 			{
 				if (port_is_logarithmic(index))
 				{
-					return exp(log(port_lower_bound(index)) * 0.5 + log(port_upper_bound(index)) * 0.5);
+					return expf(logf(port_lower_bound(index)) * 0.5f + logf(port_upper_bound(index)) * 0.5f);
 				}
 				else
 				{
-					return port_lower_bound(index) * 0.5 + port_upper_bound(index) * 0.5;
+					return port_lower_bound(index) * 0.5f + port_upper_bound(index) * 0.5f;
 				}
 			}
 			
@@ -251,11 +251,11 @@ namespace ladspamm@PROJECT_VERSION@
 			{
 				if (port_is_logarithmic(index))
 				{
-					return exp(log(port_lower_bound(index)) * 0.75 + log(port_upper_bound(index)) * 0.25);
+					return expf(logf(port_lower_bound(index)) * 0.75f + logf(port_upper_bound(index)) * 0.25f);
 				}
 				else
 				{
-					return port_lower_bound(index) * 0.75 + port_upper_bound(index) * 0.25;
+					return port_lower_bound(index) * 0.75f + port_upper_bound(index) * 0.25f;
 				}
 			}
 
@@ -263,11 +263,11 @@ namespace ladspamm@PROJECT_VERSION@
 			{
 				if (port_is_logarithmic(index))
 				{
-					return exp(log(port_lower_bound(index)) * 0.25 + log(port_upper_bound(index)) * 0.75);
+					return expf(logf(port_lower_bound(index)) * 0.25f + logf(port_upper_bound(index)) * 0.75f);
 				}
 				else
 				{
-					return port_lower_bound(index) * 0.25 + port_upper_bound(index) * 0.75;
+					return port_lower_bound(index) * 0.25f + port_upper_bound(index) * 0.75f;
 				}
 			}
 

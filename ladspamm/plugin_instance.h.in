@@ -102,7 +102,7 @@ namespace ladspamm@PROJECT_VERSION@
 			
 			if (true == the_plugin->port_is_scaled_by_samplerate(index))
 			{
-				return samplerate * the_plugin->port_lower_bound(index);
+				return (float)samplerate * the_plugin->port_lower_bound(index);
 			}
 			
 			return the_plugin->port_lower_bound(index);
@@ -120,7 +120,7 @@ namespace ladspamm@PROJECT_VERSION@
 
 			if (true == the_plugin->port_is_scaled_by_samplerate(index))
 			{
-				return samplerate * the_plugin->port_upper_bound(index);
+				return (float)samplerate * the_plugin->port_upper_bound(index);
 			}
 			
 			return the_plugin->port_upper_bound(index);
@@ -162,12 +162,12 @@ namespace ladspamm@PROJECT_VERSION@
 		{
 			if (the_plugin->port_is_integer(index))
 			{
-				return round(the_plugin->port_default(index));
+				return roundf(the_plugin->port_default(index));
 			}
 			
 			if (the_plugin->port_default_is_scaled_by_samplerate(index))
 			{
-				return samplerate * the_plugin->port_default(index);
+				return (float)samplerate * the_plugin->port_default(index);
 			}
 			
 			return the_plugin->port_default(index);

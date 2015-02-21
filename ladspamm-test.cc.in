@@ -1,13 +1,16 @@
-#include <ladspamm-0/world.h>
-#include <ladspamm-0/plugin_instance.h>
+#include <ladspamm-@PROJECT_VERSION@/world.h>
+#include <ladspamm-@PROJECT_VERSION@/plugin_instance.h>
 
 #include <iostream>
 #include <cstdlib>
 #include <vector>
 
-void analyseplugin(ladspamm::plugin_ptr plugin)
+using namespace ladspamm@PROJECT_VERSION@;
+
+void analyseplugin(plugin_ptr plugin)
 {
-	ladspamm::plugin_instance_ptr instance(new ladspamm::plugin_instance(plugin, 48000));
+	using namespace ladspamm@PROJECT_VERSION@;
+	plugin_instance_ptr instance(new plugin_instance(plugin, 48000));
 	
 	std::cout << "  Name: " << instance->plugin()->name() << std::endl;
 	std::cout << "  Label: " << instance->plugin()->label() << std::endl;
@@ -80,7 +83,7 @@ int main()
 {
 	try
 	{
-		ladspamm::world world;
+		world world;
 		
 		for (unsigned int lib_index = 0; lib_index < world.libraries.size(); ++lib_index)
 		{

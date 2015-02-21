@@ -16,7 +16,7 @@ namespace ladspamm@PROJECT_VERSION@
 		/**
 		 * @brief The libraries found in the system.
 		 */
-		const std::vector<ladspamm::library_ptr> libraries;
+		const std::vector<library_ptr> libraries;
 		
 		/**
 		 * @brief This constructor scans the system (parsing LADSPA_PATH or
@@ -24,7 +24,7 @@ namespace ladspamm@PROJECT_VERSION@
 		 */
 		world(std::string path = get_path_from_environment())
 		:
-			libraries(ladspamm::world_scan(path))
+			libraries(world_scan(path))
 		{
 			
 		}

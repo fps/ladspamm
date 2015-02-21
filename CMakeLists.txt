@@ -32,11 +32,13 @@ configure_file(ladspamm/plugin.h.in ladspamm-${PROJECT_VERSION}/plugin.h)
 configure_file(ladspamm/plugin_instance.h.in ladspamm-${PROJECT_VERSION}/plugin_instance.h)
 configure_file(ladspamm/world.h.in ladspamm-${PROJECT_VERSION}/world.h)
 
+configure_file(ladspamm-test.cc.in ladspamm-${PROJECT_VERSION}-test.cc)
+
 include_directories(${PROJECT_BINARY_DIR})
 
 add_definitions(-DPROJECT_VERSION=\"${PROJECT_VERSION}\")
 
-set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pedantic -Wconversion -Wall -pthread -fmax-errors=1")
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wconversion -Wall -pthread -fmax-errors=1")
 
 if(CMAKE_BUILD_TYPE MATCHES Debug)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O0 -pg")
@@ -75,6 +77,12 @@ set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 # BOOST
 set(Boost_USE_STATIC_LIBS)
 find_package(Boost COMPONENTS filesystem system REQUIRED)
+
+#
+# TARGETS
+# 
+add_executable(ladspamm-${PROJECT_VERSION}-test ladspamm-${PROJECT_VERSION}-test.cc)
+target_link_libraries(ladspamm-${PROJECT_VERSION}-test ${Boost_LIBRARIES} dl)
 
 # 
 # INSTALLATION
