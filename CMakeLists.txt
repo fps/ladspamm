@@ -12,7 +12,7 @@ set(CMAKE_INSTALL_PREFIX /usr)
 set(CPACK_PACKAGE_VERSION 1)
 set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Florian Paul Schmidt (mista.tapas@gmx.net)")
 set(CPACK_GENERATOR "DEB" "TGZ")
-set(CPACK_DEBIAN_PACKAGE_DEPENDS "libboost-filesystem-dev, libboost-system-dev")
+set(CPACK_DEBIAN_PACKAGE_DEPENDS "ladspa.m.plugins-1, libboost-filesystem-dev, libboost-system-dev")
 set(CPACK_DEBIAN_PACKAGE_NAME "ladspamm-${PROJECT_VERSION}-dev")
 include(CPack)
 
@@ -36,6 +36,7 @@ configure_file(ladspamm/plugin_instance.h.in ladspamm-${PROJECT_VERSION}/plugin_
 configure_file(ladspamm/world.h.in ladspamm-${PROJECT_VERSION}/world.h)
 
 configure_file(ladspamm-test.cc.in ladspamm-${PROJECT_VERSION}-test.cc)
+configure_file(ladspamm-test2.cc.in ladspamm-${PROJECT_VERSION}-test2.cc)
 
 include_directories(${PROJECT_BINARY_DIR})
 
@@ -86,6 +87,9 @@ find_package(Boost COMPONENTS filesystem system REQUIRED)
 # 
 add_executable(ladspamm-${PROJECT_VERSION}-test ladspamm-${PROJECT_VERSION}-test.cc)
 target_link_libraries(ladspamm-${PROJECT_VERSION}-test ${Boost_LIBRARIES} dl)
+
+add_executable(ladspamm-${PROJECT_VERSION}-test2 ladspamm-${PROJECT_VERSION}-test2.cc)
+target_link_libraries(ladspamm-${PROJECT_VERSION}-test2 ${Boost_LIBRARIES} dl)
 
 # 
 # INSTALLATION
