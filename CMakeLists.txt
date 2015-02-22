@@ -2,7 +2,7 @@ cmake_minimum_required (VERSION 2.8)
 
 
 # possible values: Release, Debug, RelWithDebugInfo
-# set(CMAKE_BUILD_TYPE RelWithDebugInfo)
+set(CMAKE_BUILD_TYPE RelWithDebugInfo)
 
 project(ladspamm)
 set(PROJECT_VERSION "1")
