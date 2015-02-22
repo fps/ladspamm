@@ -73,12 +73,12 @@ namespace ladspamm@PROJECT_VERSION@
 
 		bool port_is_control(unsigned int index)
 		{
-			return LADSPA_IS_PORT_AUDIO(descriptor->PortDescriptors[index]);
+			return LADSPA_IS_PORT_CONTROL(descriptor->PortDescriptors[index]);
 		}
 
 		bool port_is_audio(unsigned int index)
 		{
-			return LADSPA_IS_PORT_CONTROL(descriptor->PortDescriptors[index]);
+			return LADSPA_IS_PORT_AUDIO(descriptor->PortDescriptors[index]);
 		}
 
 		float port_lower_bound(unsigned int index)
