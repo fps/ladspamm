@@ -96,14 +96,14 @@ namespace ladspamm@PROJECT_VERSION@
 						dl_ptr the_dl(new dl((*it).path().c_str()));
 						libraries.push_back(library_ptr(new library(the_dl)));
 					}
-					catch (std::runtime_error e) 
+					catch (std::runtime_error &e) 
 					{
 						std::cerr << "Warning: could not load library: " << (*it).path().c_str() << " " << e.what() << std::endl;
 					}
 				}
 			}
 		}
-		catch (boost::filesystem::filesystem_error e) 
+		catch (boost::filesystem::filesystem_error &e) 
 		{
 			throw std::runtime_error(e.what());
 		}
