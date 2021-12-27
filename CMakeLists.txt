@@ -7,7 +7,7 @@ set(CMAKE_BUILD_TYPE RelWithDebugInfo)
 project(ladspamm)
 set(PROJECT_VERSION "1")
 
-set(CMAKE_INSTALL_PREFIX /usr)
+# set(CMAKE_INSTALL_PREFIX /usr)
 
 set(CPACK_PACKAGE_VERSION 1)
 set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Florian Paul Schmidt (mista.tapas@gmx.net)")
