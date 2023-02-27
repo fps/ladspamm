@@ -1,7 +1,7 @@
-#include <ladspamm-1/world.h>
-#include <ladspamm-1/library.h>
-#include <ladspamm-1/plugin.h>
-#include <ladspamm-1/plugin_instance.h>
+#include <ladspamm1/world.h>
+#include <ladspamm1/library.h>
+#include <ladspamm1/plugin.h>
+#include <ladspamm1/plugin_instance.h>
 
 #include <iostream>
 #include <vector>
@@ -10,7 +10,7 @@ int main()
 {
 	using namespace ladspamm1;
 
-	library l("/usr/lib/ladspa/ladspa.m.osc.plugins-1.so");
+	library l("/usr/lib/ladspa/ladspa.m.osc.plugins1.so");
 	plugin_instance i(l.plugins[0], 1000);
 
 	std::vector<float> freq(1000, 1);

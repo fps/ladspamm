@@ -1,5 +1,5 @@
-#include <ladspamm-1/world.h>
-#include <ladspamm-1/plugin_instance.h>
+#include <ladspamm1/world.h>
+#include <ladspamm1/plugin_instance.h>
 
 #include <iostream>
 #include <cstdlib>
