@@ -1,5 +1,5 @@
-#ifndef LADSPAPP_LADSPA_PLUGIN_INSTANCE_@PROJECT_VERSION@_HH
-#define LADSPAPP_LADSPA_PLUGIN_INSTANCE_@PROJECT_VERSION@_HH
+#ifndef LADSPAPP_LADSPA_PLUGIN_INSTANCE_1_HH
+#define LADSPAPP_LADSPA_PLUGIN_INSTANCE_1_HH
 
 #include <boost/shared_ptr.hpp>
 #include <boost/utility.hpp>
@@ -8,9 +8,9 @@
 #include <algorithm>
 #include <stdexcept>
 
-#include <ladspamm-@PROJECT_VERSION@/plugin.h>
+#include <ladspamm-1/plugin.h>
 
-namespace ladspamm@PROJECT_VERSION@
+namespace ladspamm1
 {
 	/**
 	 * @brief Represents an instance of a LADSPA plugin.

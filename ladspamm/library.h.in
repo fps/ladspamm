@@ -1,5 +1,5 @@
-#ifndef LADSPAMM_LIBRARY_@PROJECT_VERSION@_HH
-#define LADSPAMM_LIBRARY_@PROJECT_VERSION@_HH
+#ifndef LADSPAMM_LIBRARY_1_HH
+#define LADSPAMM_LIBRARY_1_HH
 
 #include <string>
 #include <vector>
@@ -7,9 +7,9 @@
 #include <stdexcept>
 #include <boost/shared_ptr.hpp>
 
-#include <ladspamm-@PROJECT_VERSION@/plugin.h>
+#include <ladspamm-1/plugin.h>
 
-namespace ladspamm@PROJECT_VERSION@
+namespace ladspamm1
 {
 	/**
 	 * @brief Represents a LADSPA library file containing 

@@ -1,5 +1,5 @@
-#ifndef LADSPAMM_LADSPA_WORLD_@PROJECT_VERSION@_HH
-#define LADSPAMM_LADSPA_WORLD_@PROJECT_VERSION@_HH
+#ifndef LADSPAMM_LADSPA_WORLD_1_HH
+#define LADSPAMM_LADSPA_WORLD_1_HH
 
 #include <string>
 #include <stdexcept>
@@ -9,22 +9,22 @@
 #include <boost/shared_ptr.hpp>
 #include <boost/utility.hpp>
 
-#include <ladspamm-@PROJECT_VERSION@/dl.h>
-#include <ladspamm-@PROJECT_VERSION@/library.h>
+#include <ladspamm-1/dl.h>
+#include <ladspamm-1/library.h>
 
 /**
- * \mainpage ladspamm-@PROJECT_VERSION@
+ * \mainpage ladspamm-1
  *
  * @brief ladspamm is a simple C++ library for handling (finding, loading 
  * and instantiating) LADSPA plugins.	
  */
 
 /**
- * \namespace ladspamm@PROJECT_VERSION@
+ * \namespace ladspamm1
  * 
  * @brief All ladspamm classes and functions are in this namespace.
  */
-namespace ladspamm@PROJECT_VERSION@
+namespace ladspamm1
 {
 	/**
 	 * @brief Utility function to get the LADSPA_PATH environment variable.

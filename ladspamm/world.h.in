@@ -1,12 +1,12 @@
-#ifndef LADSPAMM_WORLD_@PROJECT_VERSION@_HH
-#define LADSPAMM_WORLD_@PROJECT_VERSION@_HH
+#ifndef LADSPAMM_WORLD_1_HH
+#define LADSPAMM_WORLD_1_HH
 
 #include <string>
 #include <vector>
 
-#include <ladspamm-@PROJECT_VERSION@/ladspamm.h>
+#include <ladspamm-1/ladspamm.h>
 
-namespace ladspamm@PROJECT_VERSION@
+namespace ladspamm1
 {
 	/**
 	 * @brief This class represents the world of LADSPA plugins.

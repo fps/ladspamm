@@ -1,5 +1,5 @@
-#ifndef LADSPAMM_PLUGIN_@PROJECT_VERSION@_HH
-#define LADSPAMM_PLUGIN_@PROJECT_VERSION@_HH
+#ifndef LADSPAMM_PLUGIN_1_HH
+#define LADSPAMM_PLUGIN_1_HH
 
 #include <string>
 #include <boost/shared_ptr.hpp>
@@ -8,9 +8,9 @@
 #include <iostream>
 #include <cmath>
 
-#include <ladspamm-@PROJECT_VERSION@/dl.h>
+#include <ladspamm-1/dl.h>
 
-namespace ladspamm@PROJECT_VERSION@
+namespace ladspamm1
 {
 	/**
 	 * @brief Represents a LADSPA plugin. See plugin_instance
