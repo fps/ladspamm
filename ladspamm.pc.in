@@ -3,8 +3,8 @@ exec_prefix=${prefix}
 includedir=${prefix}/include
 libdir=${exec_prefix}/lib
 
-Name: ladspamm-@PROJECT_VERSION@
+Name: ladspamm-1
 Description: The ladspamm library
-Version: @PROJECT_VERSION@
+Version: 1
 Cflags: -I${includedir}/
 Libs: -lboost_filesystem -lboost_system -ldl

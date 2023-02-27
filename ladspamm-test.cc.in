@@ -1,15 +1,15 @@
-#include <ladspamm-@PROJECT_VERSION@/world.h>
-#include <ladspamm-@PROJECT_VERSION@/plugin_instance.h>
+#include <ladspamm-1/world.h>
+#include <ladspamm-1/plugin_instance.h>
 
 #include <iostream>
 #include <cstdlib>
 #include <vector>
 
-using namespace ladspamm@PROJECT_VERSION@;
+using namespace ladspamm1;
 
 void analyseplugin(plugin_ptr plugin)
 {
-	using namespace ladspamm@PROJECT_VERSION@;
+	using namespace ladspamm1;
 	plugin_instance_ptr instance(new plugin_instance(plugin, 48000));
 	
 	std::cout << "  Name: " << instance->plugin()->name() << std::endl;
