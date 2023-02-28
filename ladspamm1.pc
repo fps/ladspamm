@@ -3,7 +3,7 @@ exec_prefix=${prefix}
 includedir=${prefix}/include
 libdir=${exec_prefix}/lib
 
-Name: ladspamm-1
+Name: ladspamm1
 Description: The ladspamm library
 Version: 1
 Cflags: -I${includedir}/
