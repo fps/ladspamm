@@ -14,7 +14,11 @@ A C++ header only (out of pure laziness) library to find, inspect and instantiat
 
 # INSTALLATION
 
-`make && sudo make install`
+`make install`
+
+to run tests:
+
+`make test`
 
 # EXAMPLE
 

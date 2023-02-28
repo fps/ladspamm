@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-#include <ladspamm-1/ladspamm.h>
+#include <ladspamm1/ladspamm.h>
 
 namespace ladspamm1
 {
